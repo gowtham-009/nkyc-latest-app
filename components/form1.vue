@@ -1,14 +1,14 @@
 <template>
 <Toast position="top-left" group="tl" />
     <div class=" bg-surface-50 dark:bg-surface-950">
-        <div class="flex justify-end items-center px-3 " style="border:2px solid red"  :style="{ height: deviceHeight * 0.10 + 'px' }">
+        <div class="flex justify-end items-center px-3 "   :style="{ height: deviceHeight * 0.08 + 'px' }">
             <ThemeSwitch/>
         </div>
-        <div class="flex " style="border: 1px solid red;" :style="{ height: deviceHeight * 0.80 + 'px' }">
-            <div class="w-1/2 p-2 flex justify-center items-center dk" style="border: 1px solid red;">
+        <div class="flex "  :style="{ height: deviceHeight * 0.86 + 'px' }">
+            <div class="w-1/2 p-2 flex justify-center items-center dk" >
                 
             </div>
-            <div class="w-1/2 p-2 flex items-center md " style="border: 1px solid red;">
+            <div class="w-1/2 p-2 flex items-center md " >
                 <div class="w-full p-2" >
                     <div class="flex flex-col gap-1">
                         <mobileinput  v-model="phoneNumber"/>
@@ -26,9 +26,9 @@
             </div>
         </div>
 
-        <div class="flex" style="border: 1px solid red;" :style="{ height: deviceHeight * 0.10 + 'px' }">
-            <div class="w-full p-1 dk" style="border: 1px solid red;"></div>
-            <div class="w-full p-1 flex justify-center items-center " style="border: 1px solid red;" >
+        <div class="flex"  :style="{ height: deviceHeight * 0.06 + 'px' }">
+            <div class="w-full p-1 dk" ></div>
+            <div class="w-full p-1 flex justify-center items-center "  >
                 <Button label="submit" class="w-full  dark:bg-white border-0"  @click="formvalidation()" severity="help" />
             </div>
         </div>
@@ -127,7 +127,7 @@ const signup = async () => {
             group: 'tl', 
             life: 3000 
           });
-          emit('updateDiv', 'div2');
+          emit('updateDiv', 'div2', data);
         } else {
           toast.add({ 
             severity: 'error', 

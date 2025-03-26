@@ -5,7 +5,7 @@
     <form1 @updateDiv="handleUpdateDiv" />
   </div>
   <div v-if="currentForm === 'div2'">
-    <form2 @updateDiv="handleUpdateDiv"/>
+    <form2  :data="data" @updateDiv="handleUpdateDiv" />
   </div>
   <div v-if="currentForm === 'div3'">
     <form3 />
@@ -22,11 +22,17 @@ import form1 from '~/components/form1.vue';
 import form2 from '~/components/form2.vue';
 import form3 from '~/components/form3.vue';
 
+const data = ref({});
+
 const currentDiv = ref('');
 const currentForm = ref('div1'); // Default form
-const handleUpdateDiv = (value) => {
+const handleUpdateDiv = (value, newData = {}) => {
+  console.log("myval:", newData)
 currentDiv.value = value;
 currentForm.value=currentDiv.value
+data.value = newData;
+
+
 };
 
 const route = useRoute();
