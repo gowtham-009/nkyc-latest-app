@@ -29,7 +29,7 @@
         <div class="flex" style="border: 1px solid red;" :style="{ height: deviceHeight * 0.10 + 'px' }">
             <div class="w-1/2 p-1 dk"></div>
             <div class="w-1/2 p-1 flex justify-center items-center md" >
-                <Button label="submit" class="w-full  dark:bg-white text-black border-0"  @click="formvalidation()" severity="help" />
+                <Button label="submit" class="w-full  dark:bg-white border-0"  @click="formvalidation()" severity="help" />
             </div>
         </div>
 
@@ -86,40 +86,63 @@ const formvalidation=()=>{
 }
 
 
-const signup=async()=>{
-    
-   
-    const apiUrl=val.value+'signup.php'
-    const formdata=new FormData()
-    formdata.append('mobileno',phoneNumber.value)
-    formdata.append('emailid', emailID.value)
-    formdata.append('token', token.value.token)
+const signup = async () => {
+  const apiUrl = val.value + 'signup.php';
+  const formdata = new FormData();
+  const email = emailID.value;
 
-  if(token.value.token){
+  // Email validation using regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    toast.add({ 
+      severity: 'error', 
+      summary: 'Invalid Email', 
+      detail: 'Please enter a valid email address.', 
+      group: 'tl', 
+      life: 3000 
+    });
+    return; // Stop the function if email is invalid
+  }
+
+  formdata.append('mobileno', phoneNumber.value);
+  formdata.append('emailid', email);
+  formdata.append('token', token.value.token);
+
+  if (token.value.token) {
     try {
-        const response=await fetch(apiUrl,{
-            method:'POST',
-            body:formdata
-        })
-        if(!response.ok){
-            throw new Error(`HTTP error! Status: ${response.status}`);
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        body: formdata
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      } else {
+        const data = await response.json();
+        if (data.status === 'ok') {
+          toast.add({ 
+            severity: 'success', 
+            summary: 'Success', 
+            detail: data.message, 
+            group: 'tl', 
+            life: 3000 
+          });
+          emit('updateDiv', 'div2');
+        } else {
+          toast.add({ 
+            severity: 'error', 
+            summary: 'Error', 
+            detail: data.message, 
+            group: 'tl', 
+            life: 3000 
+          });
         }
-        else{
-            const data=await response.json()
-            if(data.status=='ok'){
-                toast.add({ severity: 'success', summary: 'success Message', detail: data.message, group: 'tl', life: 3000 });
-                emit('updateDiv', 'div2');
-                
-            }
-            else{
-                toast.add({ severity: 'error', summary: 'Error Message', detail: data.message, group: 'tl', life: 3000 });
-            }
-        }
+      }
     } catch (error) {
-        console.log(error)
+      console.error(error);
     }
   }
-}
+};
 
 </script>
 <style>

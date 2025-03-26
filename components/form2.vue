@@ -34,10 +34,8 @@
             <div class="w-full p-1 flex items-center hd " style="border:2px solid black">
             </div>
             <div class="w-full p-1 flex justify-between items-center"  style="border:2px solid black">
-                <Button label="Preview" @click="signup_page()" class="dark:bg-white text-black border-0" severity="help" />
-
-                <Button label="Next" class="dark:bg-white text-black border-0" severity="help" />
-
+                <Button label="Preview" @click="signup_page()" class="dark:bg-white  border-0" severity="help" />
+                <Button label="Next" class="dark:bg-white  border-0" severity="help" />
             </div>
         </div>
 
@@ -49,13 +47,9 @@
 import { ref, onMounted } from 'vue';
 import mobileinput from '~/components/forminputs/mobileinput.vue';
 import emailinput from '~/components/forminputs/emailinput.vue';
-
 import phoneotp from '~/components/forminputs/phoneotp.vue';
-
 import emailotp from '~/components/forminputs/emailotp.vue';
-
 import referalcode from '~/components/forminputs/referalcode.vue';
-
 import ThemeSwitch from '~/components/darkmode/darkmode.vue'
 
 const deviceHeight = ref(0);
