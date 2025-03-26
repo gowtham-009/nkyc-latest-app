@@ -1,15 +1,16 @@
 <template>
 <Toast position="top-left" group="tl" />
-    <div class=" bg-surface-50 dark:bg-surface-950">
-        <div class="flex justify-end items-center px-3 "   :style="{ height: deviceHeight * 0.08 + 'px' }">
+    <div class=" relative bg-indigo-100 dark:bg-indigo-900 ">
+        <div class="flex justify-end items-center px-3 bg-indigo-100 dark:bg-indigo-900 "   :style="{ height: deviceHeight * 0.08 + 'px' }">
             <ThemeSwitch/>
         </div>
-        <div class="flex "  :style="{ height: deviceHeight * 0.86 + 'px' }">
+        <div class="flex bg-indigo-50 dark:bg-indigo-950 rounded-t-3xl"  :style="{ height: deviceHeight * 0.94 + 'px' }">
             <div class="w-1/2 p-2 flex justify-center items-center dk" >
                 
             </div>
             <div class="w-1/2 p-2 flex items-center md " >
                 <div class="w-full p-2" >
+                  <p style="font-size: 2rem;" class=" text-white p-2">Sign-Up</p>
                     <div class="flex flex-col gap-1">
                         <mobileinput  v-model="phoneNumber"/>
                     </div>
@@ -26,9 +27,9 @@
             </div>
         </div>
 
-        <div class="flex"  :style="{ height: deviceHeight * 0.06 + 'px' }">
+        <div class="flex absolute bg-indigo-100  rounded-t-3xl dark:bg-indigo-900 w-full z-3 bottom-3"  :style="{ height: deviceHeight * 0.08 + 'px' }">
             <div class="w-full p-1 dk" ></div>
-            <div class="w-full p-1 flex justify-center items-center "  >
+            <div class="w-full p-2 py-2 flex justify-center items-center "  >
                 <Button label="submit" class="w-full  dark:bg-white border-0"  @click="formvalidation()" severity="help" />
             </div>
         </div>

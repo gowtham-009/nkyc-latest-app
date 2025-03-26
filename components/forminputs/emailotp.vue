@@ -3,9 +3,10 @@
       <div class="card flex justify-center">
         <InputOtp 
           v-model="emailotp" 
-          :length="6" 
+        class="flex justify-between"
           size="large" 
           @input="validateOtp"
+         
         />
       </div>
     </div>

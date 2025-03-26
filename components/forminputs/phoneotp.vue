@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="card flex justify-center">
-        <InputOtp v-model="phoneotp"  @input="validateOtp" :length="6" size="large"/>
+        <InputOtp v-model="phoneotp"  @input="validateOtp"  size="large"/>
     </div>
     </div>
 </template>
