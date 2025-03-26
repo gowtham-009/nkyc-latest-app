@@ -5,7 +5,7 @@
     <form1 @updateDiv="handleUpdateDiv" />
   </div>
   <div v-if="currentForm === 'div2'">
-    <form2 />
+    <form2 @updateDiv="handleUpdateDiv"/>
   </div>
   <div v-if="currentForm === 'div3'">
     <form3 />

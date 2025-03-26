@@ -29,12 +29,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
         <div class="flex" style="border: 1px solid red;" :style="{ height: deviceHeight * 0.10 + 'px' }">
             <div class="w-full p-1 flex items-center hd " style="border:2px solid black">
             </div>
             <div class="w-full p-1 flex justify-between items-center"  style="border:2px solid black">
-                <Button label="Preview" class="dark:bg-white text-black border-0" severity="help" />
+                <Button label="Preview" @click="signup_page()" class="dark:bg-white text-black border-0" severity="help" />
 
                 <Button label="Next" class="dark:bg-white text-black border-0" severity="help" />
 
@@ -49,7 +49,7 @@
 import { ref, onMounted } from 'vue';
 import mobileinput from '~/components/forminputs/mobileinput.vue';
 import emailinput from '~/components/forminputs/emailinput.vue';
-import checkbox from '~/components/forminputs/remembercheckbox.vue';
+
 import phoneotp from '~/components/forminputs/phoneotp.vue';
 
 import emailotp from '~/components/forminputs/emailotp.vue';
@@ -57,9 +57,9 @@ import emailotp from '~/components/forminputs/emailotp.vue';
 import referalcode from '~/components/forminputs/referalcode.vue';
 
 import ThemeSwitch from '~/components/darkmode/darkmode.vue'
-const checked = ref(false);
+
 const deviceHeight = ref(0);
-const deviceWidth=ref(0)
+
 
 onMounted(() => {
     deviceHeight.value = window.innerHeight;
@@ -67,6 +67,11 @@ onMounted(() => {
         deviceHeight.value = window.innerHeight;
     });
 });
+
+const emit = defineEmits(['updateDiv']);
+const signup_page=()=>{
+    emit('updateDiv', 'div1');
+}
 </script>
 <style>
 
