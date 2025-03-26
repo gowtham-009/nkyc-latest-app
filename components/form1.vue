@@ -27,8 +27,8 @@
         </div>
 
         <div class="flex" style="border: 1px solid red;" :style="{ height: deviceHeight * 0.10 + 'px' }">
-            <div class="w-1/2 p-1 dk"></div>
-            <div class="w-1/2 p-1 flex justify-center items-center md" >
+            <div class="w-full p-1 dk" style="border: 1px solid red;"></div>
+            <div class="w-full p-1 flex justify-center items-center " style="border: 1px solid red;" >
                 <Button label="submit" class="w-full  dark:bg-white border-0"  @click="formvalidation()" severity="help" />
             </div>
         </div>
