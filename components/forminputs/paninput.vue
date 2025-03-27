@@ -10,7 +10,7 @@
           @keypress="allowAlphanumeric"
           maxlength="10"
         />
-        <label for="pan_label">PAN no*</label>
+        <label for="pan_label">PAN NO*</label>
       </FloatLabel>
     </div>
   </template>
@@ -18,7 +18,10 @@
   <script setup>
   import { ref } from 'vue';
   
-  const pan = ref('');
+  const props = defineProps(['modelValue']);
+  const emit = defineEmits(['update:modelValue']);
+  
+  const pan =  ref(props.modelValue || '');
   
   
   const allowAlphanumeric = (event) => {
@@ -34,5 +37,9 @@
   const formatInput = () => {
     pan.value = pan.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 10);
   };
+
+  watch(pan, (newValue) => {
+    emit('update:modelValue', newValue);
+  });
   </script>
   

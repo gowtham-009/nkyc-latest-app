@@ -1,5 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+const props = defineProps(['modelValue']);
+const emit = defineEmits(['update:modelValue']);
+
+
 
 const videoRef = ref(null);
 const canvasRef = ref(null);
@@ -39,6 +43,7 @@ const capturePhoto = () => {
   ctx.drawImage(videoRef.value, 0, 0, canvasRef.value.width, canvasRef.value.height);
   photo.value = canvasRef.value.toDataURL("image/png"); // Convert to base64
   isCaptured.value = true;
+  emit("update:modelValue", photo.value);
   stopCamera();
 };
 
