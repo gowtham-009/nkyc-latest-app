@@ -16,6 +16,8 @@ const startCamera = async () => {
     stream.value = await navigator.mediaDevices.getUserMedia(constraints);
     if (videoRef.value) {
       videoRef.value.srcObject = stream.value;
+      videoRef.value.style.height = `${window.innerHeight * 0.4}px`;
+      videoRef.value.style.width = `${(window.innerHeight * 0.4) * (4 / 3)}px`;
     }
   } catch (error) {
     console.error("Error accessing camera:", error);
@@ -67,10 +69,10 @@ onUnmounted(() => {
     <canvas ref="canvasRef" style="display: none"></canvas>
     <img v-if="photo" :src="photo" alt="Captured Image" class="captured-image" />
     <div class="button-container">
-      <Button @click="isCaptured ? retakePhoto() : capturePhoto()"><i class="pi pi-camera"></i>
+      <button @click="isCaptured ? retakePhoto() : capturePhoto()">
         {{ isCaptured ? "Retake" : "Capture" }}
-      </Button>
-      <Button @click="toggleCamera"><i class="pi pi-arrow-right-arrow-left"></i>Flip</Button>
+      </button>
+      <button @click="toggleCamera">Flip Camera</button>
     </div>
   </div>
 </template>
@@ -83,8 +85,6 @@ onUnmounted(() => {
   gap: 10px;
 }
 video, .captured-image {
-  width: 100%;
-  max-width: 640px;
   border: 2px solid #333;
   border-radius: 8px;
 }
