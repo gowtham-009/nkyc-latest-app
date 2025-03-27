@@ -1,6 +1,6 @@
 <template>
 
-    <div class="relative bg-indigo-100 dark:bg-indigo-900">
+    <div class=" bg-indigo-100 dark:bg-indigo-900">
         <div class="flex justify-end items-center px-3 bg-indigo-100 dark:bg-indigo-900  "
             :style="{ height: deviceHeight * 0.06 + 'px' }">
             <ThemeSwitch />
