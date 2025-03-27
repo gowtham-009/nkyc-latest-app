@@ -85,8 +85,8 @@ onUnmounted(() => {
   gap: 10px;
 }
 video, .captured-image {
-  border: 2px solid #333;
-  border-radius: 8px;
+
+  border-radius: 15px;
 }
 .button-container {
   display: flex;
