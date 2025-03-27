@@ -32,6 +32,8 @@ const stopCamera = () => {
 const capturePhoto = () => {
   if (!videoRef.value || !canvasRef.value) return;
   const ctx = canvasRef.value.getContext("2d");
+  canvasRef.value.height = window.innerHeight * 0.4;
+  canvasRef.value.width = canvasRef.value.height * (4 / 3); // Maintain aspect ratio
   ctx.drawImage(videoRef.value, 0, 0, canvasRef.value.width, canvasRef.value.height);
   photo.value = canvasRef.value.toDataURL("image/png"); // Convert to base64
   isCaptured.value = true;
@@ -62,7 +64,7 @@ onUnmounted(() => {
 <template>
   <div class="camera-container">
     <video v-if="!isCaptured" ref="videoRef" autoplay></video>
-    <canvas ref="canvasRef" width="640" height="480" style="display: none"></canvas>
+    <canvas ref="canvasRef" style="display: none"></canvas>
     <img v-if="photo" :src="photo" alt="Captured Image" class="captured-image" />
     <div class="button-container">
       <Button @click="isCaptured ? retakePhoto() : capturePhoto()"><i class="pi pi-camera"></i>
@@ -83,7 +85,7 @@ onUnmounted(() => {
 video, .captured-image {
   width: 100%;
   max-width: 640px;
-
+  border: 2px solid #333;
   border-radius: 8px;
 }
 .button-container {
