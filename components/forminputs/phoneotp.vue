@@ -13,7 +13,7 @@ const props = defineProps(['modelValue']);
 
 const phoneotp=ref(props.modelValue || '');
 function validateOtp() {
-    emailotp.value = emailotp.value.replace(/\D/g, ''); // Remove non-numeric characters
+    phoneotp.value = phoneotp.value.replace(/\D/g, ''); // Remove non-numeric characters
   }
 
     // Watch for changes and emit the value
