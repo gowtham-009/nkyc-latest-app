@@ -25,7 +25,14 @@ const localPhoneNo = ref(props.modelValue || '');
 // Allow only number input using keypress
 const allowOnlyNumbers = (e) => {
   const charCode = e.which || e.keyCode;
-  if (charCode < 48 || charCode > 57) {
+  // Allow: backspace, delete, tab, escape, enter, and numbers
+  if (
+    charCode !== 8 && // Backspace
+    charCode !== 9 && // Tab
+    charCode !== 27 && // Escape
+    charCode !== 13 && // Enter
+    (charCode < 48 || charCode > 57) // Not a number
+  ) {
     e.preventDefault();
   }
 };
@@ -35,6 +42,7 @@ const validateInput = () => {
   localPhoneNo.value = localPhoneNo.value.replace(/\D/g, '').slice(0, 10);
 };
 
+// Watch for changes in localPhoneNo and emit the updated value
 watch(localPhoneNo, (newValue) => {
   emit('update:modelValue', newValue);
 });
