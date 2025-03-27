@@ -69,10 +69,10 @@ onUnmounted(() => {
     <canvas ref="canvasRef" style="display: none"></canvas>
     <img v-if="photo" :src="photo" alt="Captured Image" class="captured-image" />
     <div class="button-container">
-      <button @click="isCaptured ? retakePhoto() : capturePhoto()">
+      <Button @click="isCaptured ? retakePhoto() : capturePhoto()"><i class="pi pi-camera"></i>
         {{ isCaptured ? "Retake" : "Capture" }}
-      </button>
-      <button @click="toggleCamera">Flip Camera</button>
+      </Button>
+      <Button @click="toggleCamera"><i class="pi pi-arrow-right-arrow-left"></i>Flip</Button>
     </div>
   </div>
 </template>
