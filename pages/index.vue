@@ -18,9 +18,9 @@
 <script setup>
 import { ref, onMounted, onBeforeMount } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import form1 from '~/components/form1.vue';
-import form2 from '~/components/form2.vue';
-import form3 from '~/components/form3.vue';
+import form1 from '~/components/signup/form1.vue';
+import form2 from '~/components/signup/form2.vue';
+import form3 from '~/components/signup/form3.vue';
 
 const data = ref({});
 
