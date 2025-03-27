@@ -10,7 +10,7 @@
             </div>
             <div class="w-1/2 p-2 flex items-center md " >
                 <div class="w-full p-2" >
-                  <p style="font-size: 2rem;" class=" text-white p-2">Sign-Up</p>
+                  <p style="font-size: 2rem;" class=" text-black dark:text-white p-2">Sign-Up</p>
                     <div class="flex flex-col gap-1">
                         <mobileinput  v-model="phoneNumber"/>
                     </div>
