@@ -1,7 +1,7 @@
 <template>
 <Toast position="top-left" group="tl" />
     <div class=" relative bg-indigo-100 dark:bg-indigo-900 ">
-        <div class="flex justify-end items-center px-3 bg-indigo-100 dark:bg-indigo-900 "   :style="{ height: deviceHeight * 0.08 + 'px' }">
+        <div class="flex justify-end items-center px-3 bg-indigo-100 dark:bg-indigo-900"   :style="{ height: deviceHeight * 0.08 + 'px' }">
             <ThemeSwitch/>
         </div>
         <div class="flex bg-indigo-50 dark:bg-indigo-950 rounded-t-3xl"  :style="{ height: deviceHeight * 0.94 + 'px' }">

@@ -45,7 +45,7 @@
 <script setup>
 
 import { ref, onMounted, watch, watchEffect, onUnmounted } from 'vue';
-
+import { useRouter } from 'vue-router';
 import emailotp from '~/components/forminputs/otpinput.vue';
 
 
@@ -123,9 +123,10 @@ watch(e_otp, (newval) => {
 
 const isButtonDisabled = computed(() => e_otp.value.length <= 5);
 
+const router=useRouter()
 const dashboardtrigger = () => {
     if (e_otp.value.length > 5) {
-        alert('go to dashboard')
+       router.push('/main')
     }
 };
 </script>
