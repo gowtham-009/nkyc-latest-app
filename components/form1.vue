@@ -27,10 +27,10 @@
             </div>
         </div>
 
-        <div class="flex absolute bg-indigo-100  rounded-t-3xl dark:bg-indigo-900 w-full z-3 bottom-3"  :style="{ height: deviceHeight * 0.08 + 'px' }">
+        <div class="flex absolute bg-indigo-100  rounded-t-2xl dark:bg-indigo-900 w-full z-3 bottom-3"  :style="{ height: deviceHeight * 0.08 + 'px' }">
             <div class="w-full p-1 dk" ></div>
             <div class="w-full p-2 py-2 flex justify-center items-center "  >
-                <Button label="submit" class="w-full  dark:bg-white border-0"  @click="formvalidation()" severity="help" />
+                <Button label="Submit" class="w-full  dark:bg-white border-0"  @click="formvalidation()" severity="help" />
             </div>
         </div>
 

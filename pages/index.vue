@@ -8,7 +8,7 @@
     <form2  :data="data" @updateDiv="handleUpdateDiv" />
   </div>
   <div v-if="currentForm === 'div3'">
-    <form3 />
+    <form3 :data="data" />
   </div>
 
 
@@ -27,12 +27,9 @@ const data = ref({});
 const currentDiv = ref('');
 const currentForm = ref('div1'); // Default form
 const handleUpdateDiv = (value, newData = {}) => {
-  console.log("myval:", newData)
 currentDiv.value = value;
 currentForm.value=currentDiv.value
 data.value = newData;
-
-
 };
 
 const route = useRoute();

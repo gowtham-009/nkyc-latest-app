@@ -1,7 +1,7 @@
 <template>
-    <div class="flex gap-2">
-      <Checkbox v-model="checked" binary />
-      <span>Remember me</span>
+    <div class="flex items-center gap-2">
+      <Checkbox inputId="ingredient1" v-model="checked" binary />
+      <label for="ingredient1"> I agreed to open account </label>
     </div>
   </template>
   

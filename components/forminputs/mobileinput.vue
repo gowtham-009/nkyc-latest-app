@@ -1,6 +1,6 @@
 <template>
   <div>
-    <IftaLabel>
+    <FloatLabel variant="in">
       <InputText
         id="mobile"
         class="w-full"
@@ -11,7 +11,7 @@
         @input="validateInput"
       />
       <label for="mobile">Mobile no*</label>
-    </IftaLabel>
+    </FloatLabel>
   </div>
 </template>
 

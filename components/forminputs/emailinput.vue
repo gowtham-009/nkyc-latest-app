@@ -1,10 +1,10 @@
 <template>
     <div>
 
-      <IftaLabel>
+      <FloatLabel variant="in">
     <InputText id="email"  class="w-full"  v-model="email" variant="filled"      @blur="validateEmail" />
     <label for="in_label">Email ID*</label>
-</IftaLabel>
+</FloatLabel>
 
 
    
