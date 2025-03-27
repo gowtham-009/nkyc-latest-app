@@ -10,7 +10,7 @@
         type="number"
         @input="validateInput"
       />
-      <label for="mobile">Phone no*</label>
+      <label for="mobile">Mobile no*</label>
     </IftaLabel>
   </div>
 </template>
