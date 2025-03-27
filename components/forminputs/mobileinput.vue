@@ -6,7 +6,8 @@
         class="w-full"
         v-model="localPhoneNo"
         variant="filled"
-        @keydown="allowOnlyNumbers"
+        @keypress="allowOnlyNumbers"
+        @input="validateInput"
       />
       <label for="mobile">Phone no*</label>
     </IftaLabel>
@@ -21,19 +22,19 @@ const emit = defineEmits(['update:modelValue']);
 
 const localPhoneNo = ref(props.modelValue || '');
 
+// Allow only number input using keypress
 const allowOnlyNumbers = (e) => {
-  // Allow only numbers, backspace, arrow keys, and delete
-  if (!/^\d$/.test(e.key) && !['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete'].includes(e.key)) {
-    e.preventDefault();
-  }
-
-  // Prevent input if the length exceeds 10 characters
-  if (localPhoneNo.value.length >= 10 && !['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete'].includes(e.key)) {
+  const charCode = e.which || e.keyCode;
+  if (charCode < 48 || charCode > 57) {
     e.preventDefault();
   }
 };
 
-// Watch for changes and emit the value
+// Validate and limit to 10 digits
+const validateInput = () => {
+  localPhoneNo.value = localPhoneNo.value.replace(/\D/g, '').slice(0, 10);
+};
+
 watch(localPhoneNo, (newValue) => {
   emit('update:modelValue', newValue);
 });
