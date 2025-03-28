@@ -1,59 +1,49 @@
 <template>
-
-    <div class=" bg-indigo-100 dark:bg-indigo-900">
-        <div class="flex justify-end items-center px-3 bg-indigo-100 dark:bg-indigo-900  "
-            :style="{ height: deviceHeight * 0.06 + 'px' }">
-            <ThemeSwitch />
+    <div class="bg-blue-600">
+        <div class="flex justify-between items-center px-3" 
+            :style="{ height: deviceHeight * 0.08 + 'px' }">
+            <span class="text-white"><i class="pi pi-angle-left text-3xl"></i></span>
+            <ThemeSwitch/>
         </div>
-        <div class="flex bg-indigo-50  rounded-t-3xl dark:bg-indigo-950"
-            :style="{ height: deviceHeight * 0.94 + 'px' }">
-            <div class="w-1/2 p-2 flex justify-center items-center dk">
+        <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black" 
+            :style="{ height: deviceHeight * 0.92 + 'px' }">
+          <div class="w-full p-1 mt-8" >
+            <p class="font-bold text-slate-800 text-4xl dark:text-gray-400">
+                OTP sent
+            </p>
+            <p class="text-lg leading-6 mt-3 font-bold text-gray-500">
+                We have sent an OTP to your mobile number +91 {{ phoneNumber }}
+            </p>
+            <div class="w-full mt-3">
+                <phoneOTP v-model="p_otp"/>
 
-            </div>
-            <div class="w-1/2 p-3 mt-3 flex items-center md ">
-                <!-- mobile-otp -->
-                <div class="w-full">
-                    <div class="w-full">
-                        <h1 class="text-slate-800 font-medium dark:text-slate-200" style="font-size: 1.7rem;">Enter OTP here</h1>
-                        <span class="text-slate-500 dark:text-slate-300">We have sent an OTP to your mobile number</span> <br>
-                        <span class="text-slate-500 dark:text-slate-300">+91-{{ phoneNumber }}</span>
-                        <div class="mt-3">
-                            <phoneotp v-model="p_otp"  />
-                            <div class="p-1 w-full flex justify-between">
-                                <h2 class="font-medium text-lg dark:text-slate-300">00:{{ timeLeft.toString().padStart(2, '0') }}s</h2>
-                                <span class="text-indigo-500 cursor-pointer text-xl font-medium dark:text-slate-300">Resend OTP</span>
-                            </div>
+                <div class="w-full mt-1 flex justify-between">
+                    <h2 class="font-bold text-lg dark:text-gray-500">00:{{ timeLeft.toString().padStart(2, '0') }}s</h2>
 
-                            <div class="w-full mt-2">
-                                <Button label="Verify OTP" @click="emailotptrigger()" class="w-full dark:bg-white" severity="info"  :disabled="isButtonDisabled"  />
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-xl text-gray-500 font-bold">Resend OTP</p>
                 </div>
             </div>
-
+          </div>
+          <div class="w-full" >
+            <Button type="button" label="Verify OTP" class="bg-blue-600 text-white w-full py-4 text-xl border-0" @click="mobile_signup()"  :disabled="!isOtpValid" >
+        </Button>
+          </div>
         </div>
 
 
     </div>
-
-    <Dialog v-model:visible="visible" modal header="OTP Status" :style="{ width: '25rem' }">
-        <span>Your OTP Successfully Verified</span>
-    </Dialog>
 </template>
 
 <script setup>
-
-import { ref, onMounted, watch, watchEffect, onUnmounted } from 'vue';
-
-import phoneotp from '~/components/forminputs/otpinput.vue';
-
-
 import ThemeSwitch from '~/components/darkmode/darkmode.vue'
-
-
-
-const visible = ref(false);
+import phoneOTP from '~/components/forminputs/otpinput.vue'
+import { ref, onMounted, watch, watchEffect, onUnmounted } from 'vue';
+const deviceHeight = ref(0);
+const emit = defineEmits(['updateDiv']);
+const timeLeft = ref(60); // Start from 60 seconds
+const phoneNumber = ref('')
+let timer = null;
+const p_otp=ref('')
 const props = defineProps({
     data: {
         type: Object,
@@ -61,29 +51,14 @@ const props = defineProps({
     },
 });
 
-const timeLeft = ref(60); // Start from 60 seconds
-
-let timer = null;
-
-
-
-const phoneNumber = ref('')
-
-
-
-
-const p_otp = ref('')
-const deviceHeight = ref(0);
-
-
-
 onMounted(() => {
     deviceHeight.value = window.innerHeight;
     window.addEventListener('resize', () => {
         deviceHeight.value = window.innerHeight;
     });
 
-    timer = setInterval(() => {
+  
+ timer = setInterval(() => {
         if (timeLeft.value > 0) {
             timeLeft.value -= 1;
         } else {
@@ -92,17 +67,16 @@ onMounted(() => {
     }, 1000);
 
 
+
 });
 
 onUnmounted(() => {
     clearInterval(timer);
 });
 
-const emit = defineEmits(['updateDiv']);
-
-
 watchEffect(() => {
-    const mobileNo = props.data.mobile_no || '';
+    const mobileNo = props.data || '';
+ 
     phoneNumber.value = mobileNo.length >= 10
         ? `${mobileNo.slice(0, 2)}******${mobileNo.slice(-3)}`
         : mobileNo;
@@ -110,31 +84,16 @@ watchEffect(() => {
    
 });
 
-watch(p_otp, (newval) => {
-    if (newval.length > 5) {
-         visible.value = true
-        clearInterval(timer);
-    }
-})
-const isButtonDisabled = computed(() => p_otp.value.length <= 5);
+const isOtpValid = computed(() => 
+p_otp.value.length === 6
+);
 
-const emailotptrigger = () => {
-    if (p_otp.value.length > 5) {
-         emit('updateDiv', 'div3', props.data);
-    }
-};
+const mobile_signup=()=>{
+    emit('updateDiv', 'div3');
+}
 
 </script>
+
 <style>
-.disabled {
-    pointer-events: none;
-    opacity: 0.5;
-}
 
-@media(max-width:992px) {
-    .hd {
-        display: none !important;
-    }
-
-}
 </style>

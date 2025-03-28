@@ -1,145 +1,73 @@
 <template>
-
-    <div class="bg-indigo-100 dark:bg-indigo-900">
-        <div class="flex justify-end items-center px-3 bg-indigo-100 dark:bg-indigo-900  "
-            :style="{ height: deviceHeight * 0.06 + 'px' }">
-            <ThemeSwitch />
-        </div>
-        <div class="flex bg-indigo-50  rounded-t-3xl dark:bg-indigo-950"
-            :style="{ height: deviceHeight * 0.94 + 'px' }">
-            <div class="w-1/2 p-2 flex justify-center items-center dk">
-
+    <div class="bg-blue-600">
+        <div class="w-full p-2 bg-blue-600" :style="{ height: deviceHeight * 0.40 + 'px' }">
+            <div class="w-full px-2 py-2 flex justify-between items-center">
+                <Button class="bg-slate-100 border-0 text-slate-600 py-3 dark:bg-black"><i
+                        class="pi pi-angle-left text-xl dark:text-gray-500"></i></Button>
+                <ThemeSwitch />
             </div>
-            <div class="w-1/2 p-3 mt-3 flex items-center md ">
-                <!-- mobile-otp -->
+            <div class="w-full flex justify-center mt-10 ">
+                <span class="text-white" style="font-size: 3rem;">NKYC</span>
+            </div>
+        </div>
+
+        <div class="w-full p-2   bg-white rounded-t-3xl dark:bg-black"
+            :style="{ height: deviceHeight * 0.60 + 'px' }">
+            <div class="w-full mt-3 px-3 " >
                 <div class="w-full">
-                    <div class="w-full">
-                        <h1 class="text-slate-800 font-medium dark:text-slate-200" style="font-size: 1.7rem;">Enter OTP here</h1>
-                        <span class="text-slate-500 dark:text-slate-300">We have sent an OTP to your Email ID</span> <br>
-                        <span class="text-slate-500 dark:text-slate-300">{{ emailID }}</span>
-                        <div class="mt-3">
-                            <emailotp v-model="e_otp" />
-                            <div class="p-1 w-full flex justify-between">
-                                <h2 class="font-medium text-lg dark:text-slate-300">00:{{ timeLeft.toString().padStart(2, '0') }}s</h2>
-                                <span class="text-indigo-500 cursor-pointer text-xl font-medium dark:text-slate-300">Resend OTP</span>
-                            </div>
-
-                            <div class="w-full mt-2">
-                                <Button label="Verify OTP" @click="dashboardtrigger()" class="w-full dark:bg-white" severity="info"  :disabled="isButtonDisabled" />
-                            </div>
-                        </div>
-                    </div>
+                <p class="text-3xl font-bold dark:text-gray-400">Add your email</p>
+                <p class="mt-2 leading-6 text-xl font-semibold text-gray-500">This is where we'll send you important updates and insights on the market.</p>
                 </div>
-            </div>
 
+                <div class="w-full mt-4">
+                    <EmailInput v-model="emailid"/>
+                </div>
+
+
+                <div class="w-full mt-5 ">
+                    <Button type="button" label="Continue" class="bg-blue-600 text-white w-full py-4 text-xl border-0"   :disabled="!emailid" >
+                    </Button>
+
+                    <p class="text-gray-500 text-center mt-1">OR</p>
+
+                    <Button type="button" icon="pi pi-google" label="Continue with Google" class="bg-blue-900 text-white w-full py-4 text-xl border-0 mt-1"   >
+                    </Button>
+                </div>
+               
+
+               
+
+                </div>
+
+
+          
         </div>
-
-
     </div>
-
-    <Dialog v-model:visible="visible" modal header="OTP Status" :style="{ width: '25rem' }">
-        <span>Your OTP Successfully Verified</span>
-    </Dialog>
 </template>
 
 <script setup>
 
-import { ref, onMounted, watch, watchEffect, onUnmounted } from 'vue';
-import { useRouter } from 'vue-router';
-import emailotp from '~/components/forminputs/otpinput.vue';
-
-
+import { ref, onMounted } from 'vue';
 import ThemeSwitch from '~/components/darkmode/darkmode.vue'
+import EmailInput from '~/components/forminputs/emailinput.vue'
+
+import Button from 'primevue/button';
+
+const emailid = ref('')
 
 
 
-const visible = ref(false);
-const props = defineProps({
-    data: {
-        type: Object,
-        default: () => ({}),
-    },
-});
-
-const timeLeft = ref(60); // Start from 60 seconds
-
-let timer = null;
-
-
-
-const emailID = ref('')
-
-
-
-const e_otp = ref('')
 const deviceHeight = ref(0);
-
-
-
 onMounted(() => {
     deviceHeight.value = window.innerHeight;
     window.addEventListener('resize', () => {
         deviceHeight.value = window.innerHeight;
+
     });
-
-    timer = setInterval(() => {
-        if (timeLeft.value > 0) {
-            timeLeft.value -= 1;
-        } else {
-            clearInterval(timer);
-        }
-    }, 1000);
-
-
 });
 
-onUnmounted(() => {
-    clearInterval(timer);
-});
-
-const emit = defineEmits(['updateDiv']);
 
 
-watchEffect(() => {
-    const email = props.data.email_id || '';
-    const [name, domain] = email.split('@');
-    if (name && domain) {
-        const maskedName = name.length > 2
-            ? `${name.slice(0, 2)}${'*'.repeat(name.length - 2)}`
-            : name;
-        emailID.value = `${maskedName}@${domain}`;
-    } else {
-        emailID.value = email;
-    }
-});
 
-watch(e_otp, (newval) => {
-    if (newval.length > 5) {
-        visible.value = true
-        clearInterval(timer);
-
-    }
-})
-
-const isButtonDisabled = computed(() => e_otp.value.length <= 5);
-
-const router=useRouter()
-const dashboardtrigger = () => {
-    if (e_otp.value.length > 5) {
-       router.push('/main')
-    }
-};
 </script>
-<style>
-.disabled {
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-@media(max-width:992px) {
-    .hd {
-        display: none !important;
-    }
-
-}
-</style>
+<style></style>

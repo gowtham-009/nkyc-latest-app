@@ -27,6 +27,7 @@ const data = ref({});
 const currentDiv = ref('');
 const currentForm = ref('div1'); // Default form
 const handleUpdateDiv = (value, newData = {}) => {
+
 currentDiv.value = value;
 currentForm.value=currentDiv.value
 data.value = newData;

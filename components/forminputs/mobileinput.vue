@@ -1,7 +1,7 @@
 <template>
   <div class="flex gap-3">
     <InputText type="text"  class="w-16 font-bold" v-model="countryphonenocode" disabled/>
-    <FloatLabel variant="in" class="w-full">
+    
       <InputText
         id="mobile"
         class="w-full font-bold"
@@ -9,12 +9,12 @@
         variant="filled"
         inputmode="numeric"
         type="number"
-       
+        placeholder="Enter Phone Number"
         @input="validateInput"
-       
+        size="large"
       />
-      <label for="mobile" class="dark:text-gray-100">Mobile no*</label>
-    </FloatLabel>
+    
+    
   </div>
 </template>
 
