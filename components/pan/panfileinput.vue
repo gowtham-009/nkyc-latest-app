@@ -1,6 +1,5 @@
 <template>
     <div class="card">
-    
         <Toast />
         <FileUpload 
             name="demo[]" 
@@ -11,6 +10,7 @@
             :showCancelButton="false"
             @select="onFileSelect"
         >
+        
             <template #empty>
                 <span>Drag and drop files here to upload.</span>
             </template>
@@ -19,11 +19,19 @@
 </template>
 
 <script setup>
-import { defineEmits } from "vue";
+import { defineEmits, onMounted } from "vue";
 
 const emit = defineEmits(["file-selected"]);
 
 const onFileSelect = (event) => {
     emit("file-selected", event.files); // Emit files to parent
 };
+
+onMounted(() => {
+    document.addEventListener("click", (event) => {
+        if (event.target.classList.contains("p-fileupload-file-thumbnail")) {
+            alert("Image clicked: " + event.target.src);
+        }
+    });
+});
 </script>

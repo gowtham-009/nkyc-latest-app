@@ -1,23 +1,26 @@
 <template>
-  <div>
-    <FloatLabel variant="in">
+  <div class="flex gap-3">
+    <InputText type="text" size="large" class="w-16 font-bold" v-model="countryphonenocode" disabled/>
+    <FloatLabel variant="in" class="w-full">
       <InputText
         id="mobile"
-        class="w-full"
+        class="w-full font-bold"
         v-model="localPhoneNo"
         variant="filled"
         inputmode="numeric"
         type="number"
+        size="large"
         @input="validateInput"
+       
       />
-      <label for="mobile">Mobile no*</label>
+      <label for="mobile" class="dark:text-gray-100">Mobile no*</label>
     </FloatLabel>
   </div>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue';
-
+const countryphonenocode=ref('+91')
 const props = defineProps(['modelValue']);
 const emit = defineEmits(['update:modelValue']);
 
