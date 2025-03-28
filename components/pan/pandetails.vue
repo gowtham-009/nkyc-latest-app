@@ -124,5 +124,5 @@ const pan_submission=()=>{
 
 </script>
 <style>
-@import url("~/assets/css/form1.css");
+
 </style>
