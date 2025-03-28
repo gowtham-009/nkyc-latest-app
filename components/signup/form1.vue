@@ -16,19 +16,19 @@
 
     <div class="w-full mt-3 px-3 flex flex-col justify-between" >
      <div class="w-full">
-      <p class="text-4xl font-bold">Ready to get started?</p>
-      <p class="mt-2 leading-6 text-xl font-semibold text-gray-500">Enter your number to help us set up your investment account</p>
+      <p class="text-3xl font-bold">Ready to get started?</p>
+      <p class="mt-2 leading-6 text-md font-semibold text-gray-500">Enter your number to help us set up your investment account</p>
      </div>
 
-      <div class="w-full mt-6">
+      <div class="w-full mt-4">
         <MobileInput/>
       </div>
 
-      <div class="w-full mt-6">
+      <div class="w-full mt-4">
         <Checkbox/>
       </div>
 
-      <div class="w-full mt-6">
+      <div class="w-full mt-4">
        <p class="text-md text-center text-gray-500">By processing, you accept Venture's <span class="font-semibold">Terms of Use</span> and <span class="font-semibold">Privacy Policy</span></p>
       </div>
 
