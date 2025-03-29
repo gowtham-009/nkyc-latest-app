@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-blue-600">
-    <div class="w-full p-2 bg-blue-600"
+  <div class="primary_color">
+    <div class="w-full p-2 primary_color"
       :style="{ height: deviceHeight * 0.40 + 'px' }">
      <div class="w-full px-2 py-2 flex justify-between items-center">
       <Button  class="bg-slate-100 border-0 text-slate-600 py-3 dark:bg-black"><i class="pi pi-angle-left text-xl dark:text-gray-500"></i></Button>
@@ -36,11 +36,21 @@
     <div class="w-full ">
    
 
-      <Button type="button" label="Continue" :disabled="!mobileNumber || !checkboxValue" class="bg-blue-600 text-white w-full py-4 text-xl border-0" @click="mobile_signup">
-        <span v-if="!isLoading">Continue</span>
-          <span v-else class="loading-text">Loading...</span>
-
-        </Button>
+      <Button 
+  type="button" 
+  label="Continue" 
+  :disabled="!mobileNumber || !checkboxValue" 
+  class="primary_color text-white w-full py-4 text-xl border-0" 
+  @click="mobile_signup"
+>
+  <transition name="fade">
+    <span v-if="!isLoading">Continue</span>
+  </transition>
+  
+  <transition name="fade">
+    <span v-if="isLoading" class="loading-text">Progress...</span>
+  </transition>
+</Button>
       </div>
     </div>
   </div>
@@ -72,14 +82,19 @@ const mobile_signup=()=>{
 
   setTimeout(() => {
     isLoading.value = false;
-    emit('updateDiv', 'div2', mobileNumber.value);
-  }, 1000);
+   // emit('updateDiv', 'div2', mobileNumber.value);
+  }, 10000);
 
 
 }
 
 
 </script>
-<style>
-
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 </style>

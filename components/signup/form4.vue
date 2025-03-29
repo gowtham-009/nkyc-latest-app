@@ -1,6 +1,6 @@
 <template>
-    <div class="primary_color">
-        <div class="flex justify-between primary_color items-center px-3" 
+    <div class="bg-blue-600">
+        <div class="flex justify-between items-center px-3" 
             :style="{ height: deviceHeight * 0.08 + 'px' }">
             <span class="text-white cursor-pointer" @click="back()"><i class="pi pi-angle-left text-3xl"></i></span>
             <ThemeSwitch/>
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="w-full" >
-            <Button type="button" label="Verify OTP" class="primary_color text-white w-full py-4 text-xl border-0" @click="mobile_signup()"  :disabled="!isOtpValid" >
+            <Button type="button" label="Verify OTP" class="bg-blue-600 text-white w-full py-4 text-xl border-0" @click="mobile_signup()"  :disabled="!isOtpValid" >
         </Button>
           </div>
         </div>

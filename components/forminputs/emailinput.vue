@@ -1,6 +1,6 @@
 <template>
     <div>
-    <InputText id="email"  class="w-full py-2"  v-model="email" variant="filled" placeholder="Enter Email"size="large"    @blur="validateEmail" />
+      <InputText id="email"  class="w-full"  v-model="email" variant="filled" placeholder="Enter Email" size="large"    @blur="validateEmail" />
     </div>
   </template>
   
