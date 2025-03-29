@@ -1,14 +1,17 @@
 <template>
     <div>
-      
-       <Pandetails/>
+       
+        <NKYCList/>
     </div>
 </template>
 
 <script setup>
-import Pandetails from'~/components/pan/pandetails.vue'
+import NKYCList from '~/components/NKYC_Forms/nkyclist.vue'
+
+
+
 </script>
 
-<style lang="scss" scoped>
+<style >
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-blue-600">
+    <div class="primary_color">
         <div class="flex justify-between items-center px-3" 
             :style="{ height: deviceHeight * 0.08 + 'px' }">
             <span class="text-white cursor-pointer" @click="back()"><i class="pi pi-angle-left text-3xl"></i></span>
@@ -12,10 +12,10 @@
                 OTP sent
             </p>
             <p class="text-lg leading-6 mt-3 font-bold text-gray-500">
-                We have sent an OTP to your mobile number +91 {{ phoneNumber }}
+                We have sent an OTP to your email  {{ emailid }}
             </p>
             <div class="w-full mt-3">
-                <phoneOTP v-model="p_otp"/>
+                <emailOTP v-model="e_otp"/>
 
                 <div class="w-full mt-1 flex justify-between">
                     <h2 class="font-bold text-lg dark:text-gray-500">00:{{ timeLeft.toString().padStart(2, '0') }}s</h2>
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="w-full" >
-            <Button type="button" label="Verify OTP" class="bg-blue-600 text-white w-full py-4 text-xl border-0" @click="mobile_signup()"  :disabled="!isOtpValid" >
+            <Button type="button" label="Verify OTP" class="primary_color text-white w-full py-4 text-xl border-0" @click="nkyclist()"  :disabled="!isOtpValid" >
         </Button>
           </div>
         </div>
@@ -36,14 +36,15 @@
 
 <script setup>
 import ThemeSwitch from '~/components/darkmode/darkmode.vue'
-import phoneOTP from '~/components/forminputs/otpinput.vue'
+import emailOTP from '~/components/forminputs/otpinput.vue'
 import { ref, onMounted, watch, watchEffect, onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
 const deviceHeight = ref(0);
 const emit = defineEmits(['updateDiv']);
 const timeLeft = ref(60); // Start from 60 seconds
-const phoneNumber = ref('')
+const emailid = ref('')
 let timer = null;
-const p_otp=ref('')
+const e_otp=ref('')
 const props = defineProps({
     data: {
         type: Object,
@@ -75,24 +76,24 @@ onUnmounted(() => {
 });
 
 watchEffect(() => {
-    const mobileNo = props.data || '';
+    const email = props.data || '';
  
-    phoneNumber.value = mobileNo.length >= 10
-        ? `${mobileNo.slice(0, 2)}******${mobileNo.slice(-3)}`
-        : mobileNo;
+    emailid.value = email.length >= 10
+        ? `${email.slice(0, 2)}******${email.slice(-3)}`
+        : email;
 
    
 });
 
 const isOtpValid = computed(() => 
-p_otp.value.length === 6
+e_otp.value.length === 6
 );
-
-const mobile_signup=()=>{
-    emit('updateDiv', 'div3');
+const router=useRouter()
+const nkyclist=()=>{
+    router.push('/main')
 }
 const back=()=>{
-    emit('updateDiv', 'div1');
+    emit('updateDiv', 'div3');
 }
 </script>
 

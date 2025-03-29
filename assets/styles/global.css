@@ -7,3 +7,8 @@
 .primary_color{
     background-color: oklch(0.398 0.195 277.366);
 }
+
+/* nkyc list page */
+.primary_color_list {
+    background: linear-gradient(to bottom, oklch(0.9 0.05 250), white);
+}
