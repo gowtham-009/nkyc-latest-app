@@ -2,11 +2,11 @@ body{
     overflow: hidden;
 }
 :root {
-    --p-primary-50: oklch(0.98 0.01 277.366);
+    /* --p-primary-50: oklch(0.98 0.01 277.366);
     --p-primary-100: oklch(0.94 0.05 277.366);
     --p-primary-200: oklch(0.85 0.1 277.366);
     --p-primary-300: oklch(0.75 0.15 277.366);
-    --p-primary-400: oklch(0.65 0.18 277.366);
+    --p-primary-400: oklch(0.65 0.18 277.366); */
     --p-primary-500: oklch(0.55 0.195 277.366);
     --p-primary-600: oklch(0.45 0.195 277.366);
     --p-primary-700: oklch(0.398 0.195 277.366); /* Your preferred color */
@@ -39,9 +39,9 @@ body{
     --p-content-border-color: var(--p-surface-200);
     --p-content-hover-background: var(--p-surface-100);
     --p-content-hover-color: var(--p-surface-800);
-    --p-highlight-background: var(--p-primary-50);
+    --p-highlight-background: var(--p-primary-500);
     --p-highlight-color: var(--p-primary-700);
-    --p-highlight-focus-background: var(--p-primary-100);
+    --p-highlight-focus-background: var(--p-primary-500);
     --p-highlight-focus-color: var(--p-primary-800);
     --p-text-color: var(--p-surface-700);
     --p-text-hover-color: var(--p-surface-800);
@@ -52,10 +52,10 @@ body{
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
     :root {
-        --p-primary-color: var(--p-primary-400);
+        --p-primary-color: var(--p-primary-500);
         --p-primary-contrast-color: var(--p-surface-900);
-        --p-primary-hover-color: var(--p-primary-300);
-        --p-primary-active-color: var(--p-primary-200);
+        --p-primary-hover-color: var(--p-primary-500);
+        --p-primary-active-color: var(--p-primary-500);
         --p-content-border-color: var(--p-surface-700);
         --p-content-hover-background: var(--p-surface-800);
         --p-content-hover-color: var(--p-surface-0);
