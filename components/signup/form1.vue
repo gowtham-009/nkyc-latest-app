@@ -39,7 +39,7 @@
       <Button
     type="button"
     label="Continue"
-    :disabled="!mobileNumber || !checkboxValue"
+    :disabled="!mobileNumber || !checkboxValue ||  mobileNumber.length !== 10"
     class="primary_color text-white w-full py-4 text-xl border-0 relative overflow-hidden"
     @click="mobile_signup"
   >
