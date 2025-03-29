@@ -36,21 +36,24 @@
     <div class="w-full ">
    
 
-      <Button 
-  type="button" 
-  label="Continue" 
-  :disabled="!mobileNumber || !checkboxValue" 
-  class="primary_color text-white w-full py-4 text-xl border-0" 
-  @click="mobile_signup"
->
-  <transition name="fade">
-    <span v-if="!isLoading">Continue</span>
-  </transition>
-  
-  <transition name="fade">
-    <span v-if="isLoading" class="loading-text">Progress...</span>
-  </transition>
-</Button>
+      <Button
+    type="button"
+    label="Continue"
+    :disabled="!mobileNumber || !checkboxValue"
+    class="primary_color text-white w-full py-4 text-xl border-0 relative overflow-hidden"
+    @click="mobile_signup"
+  >
+    <transition name="fade">
+      <span v-if="!isLoading">Continue</span>
+    </transition>
+
+    <transition name="fade">
+      <span v-if="isLoading" class="loading-text flex items-center relative">
+        Progress...
+        <span class="loading-wave"></span>
+      </span>
+    </transition>
+  </Button>
       </div>
     </div>
   </div>
@@ -83,7 +86,7 @@ const mobile_signup=()=>{
   setTimeout(() => {
     isLoading.value = false;
     emit('updateDiv', 'div2', mobileNumber.value);
-  },5000);
+  },1000);
 
 
 }
@@ -91,10 +94,35 @@ const mobile_signup=()=>{
 
 </script>
 <style scoped>
+/* Smooth Fade Transition */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s ease-in-out;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+/* Hover Wave Effect */
+.loading-wave {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-100%);
+  animation: waveHover 1.5s ease-in-out infinite;
+}
+
+@keyframes waveHover {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 </style>
