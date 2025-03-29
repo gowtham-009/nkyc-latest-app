@@ -3,7 +3,7 @@
     <div class="flex flex-col items-center py-2">
       <InputOtp class="w-full"  @input="validateOtp" v-model="otp" :length="6" style="gap: 0">
         <template #default="{ attrs, events }">
-          <input  type="text" v-bind="attrs" v-on="events" class="custom-otp-input w-full dark:text-slate-100" />
+          <input  type="number" v-bind="attrs" v-on="events" class="custom-otp-input w-full dark:text-slate-100" />
         </template>
       </InputOtp>
     </div>
