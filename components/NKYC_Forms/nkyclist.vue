@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full flex gap-5 mt-4">
+                    <div class="w-full flex gap-5 mt-2">
                         <div class="w-16 h-16 bg-blue-200  rounded-full flex justify-center items-center p-1">
                             <span><i class="pi pi-user text-blue-900" style="font-size: 1.5rem;"></i></span>
                         </div>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full flex gap-5 mt-4">
+                    <div class="w-full flex gap-5 mt-2">
                         <div class="w-16 h-16 bg-blue-200  rounded-full flex justify-center items-center p-1">
                             <span><i class="pi pi-credit-card text-blue-900" style="font-size: 1.5rem;"></i></span>
                         </div>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full flex gap-5 mt-4">
+                    <div class="w-full flex gap-5 mt-2">
                         <div class="w-16 h-16 bg-blue-200  rounded-full flex justify-center items-center p-1">
                             <span><i class="pi pi-verified text-blue-900" style="font-size: 1.5rem;"></i></span>
                         </div>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full flex gap-5 mt-4">
+                    <div class="w-full flex gap-5 mt-2">
                         <div class="w-16 h-16 bg-blue-200  rounded-full flex justify-center items-center p-1">
                             <span><i class="pi pi-pen-to-square text-blue-900" style="font-size: 1.5rem;"></i></span>
                         </div>
