@@ -7,7 +7,7 @@
                     <ThemeSwitch @click="togglePrimaryColor" />
                 </div>
                 <div class="w-full flex justify-center">
-                    <span class="text-black mt-3" style="font-size: 3rem;">NKYC</span>
+                    <span class="text-black mt-2" style="font-size: 3rem;">NKYC</span>
                 </div>
 
                 <div class="w-full">
@@ -16,7 +16,7 @@
                     </p>
                 </div>
 
-                <div class="w-full px-4 mt-4" >
+                <div class="w-full px-4 mt-2" >
                     <div class="w-full flex gap-5">
                         <div class="w-16 h-16 bg-blue-200  rounded-full flex justify-center items-center p-1">
                             <span><i class="pi pi-folder-open text-blue-900" style="font-size: 1.5rem;"></i></span>
