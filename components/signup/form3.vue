@@ -27,11 +27,12 @@
         </div>
 
         <div class="w-full mt-5">
-          <Button type="button" label="Continue" :disabled="!isValidEmail"
-            class="animated-button primary_color text-white w-full py-4 text-xl border-0 relative overflow-hidden"
+          <Button type="button"
+           label="Continue" :disabled="!isValidEmail"
+            class=" wave-btn primary_color text-white w-full py-4 text-xl border-0 "
             @click="handleButtonClick">
-            <span v-if="!isAnimating && !isLoading" class="button-text">Continue</span>
-            <span v-else-if="isLoading" class="loading-text">Progress...</span>
+            {{ buttonText }}
+            <span v-if="isAnimating" class="wave"></span>
           </Button>
 
           <p class="text-gray-500 text-center mt-1">OR</p>
@@ -54,8 +55,9 @@ import Button from 'primevue/button';
 const emailid = ref('');
 const emit = defineEmits(['updateDiv']);
 const deviceHeight = ref(0);
-const isLoading = ref(false)
+
 const isAnimating = ref(false);
+const buttonText = ref("Continue");
 onMounted(() => {
   deviceHeight.value = window.innerHeight;
   window.addEventListener('resize', () => {
@@ -71,44 +73,12 @@ const handleButtonClick = () => {
   isAnimating.value = true;
   setTimeout(() => {
     isAnimating.value = false;
-    isLoading.value = true;
-    executeSignup();
-  }, 200); // Slower animation before changing text
+    emit('updateDiv', 'div4', emailid.value);
+  }, 800);
 };
 
-const executeSignup = () => {
-  setTimeout(() => {
-    isLoading.value = false;
-    emit('updateDiv', 'div4', emailid.value);
-  }, 2000);
-};
+
 const back = () => {
   emit('updateDiv', 'div2');
 };
 </script>
-<style scoped>
-/* Button base styles */
-.animated-button {
-  position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease-in-out;
-}
-
-/* Hover effect: creating an animated background */
-.animated-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: left 0.15s ease-in;
-  /* Slower animation */
-}
-
-/* Start animation from left to right on hover */
-.animated-button:hover::before {
-  left: 0;
-}
-</style>

@@ -34,16 +34,14 @@
         </div>
       </div>
       <div class="w-full">
+       
         <Button
-          type="button"
-          label="Continue"
-          :disabled="!mobileNumber || !checkboxValue || mobileNumber.length !== 10"
-          class="animated-button primary_color text-white w-full py-4 text-xl border-0 relative overflow-hidden"
-          @click="handleButtonClick"
-        >
-          <span v-if="!isAnimating && !isLoading" class="button-text">Continue</span>
-          <span v-else-if="isLoading" class="loading-text">Progress...</span>
-        </Button>
+        :disabled="!mobileNumber || !checkboxValue || mobileNumber.length !== 10"
+         @click="handleButtonClick" class="primary_color wave-btn w-full text-white  py-4 text-xl border-0">
+        {{ buttonText }}
+        <span v-if="isAnimating" class="wave"></span>
+      </Button>
+
       </div>
     </div>
   </div>
@@ -59,9 +57,8 @@ import Button from 'primevue/button';
 const emit = defineEmits(['updateDiv']);
 const mobileNumber = ref('');
 const checkboxValue = ref('');
-const isLoading = ref(false);
 const isAnimating = ref(false);
-
+const buttonText = ref("Continue");
 const deviceHeight = ref(0);
 onMounted(() => {
   deviceHeight.value = window.innerHeight;
@@ -71,44 +68,16 @@ onMounted(() => {
 });
 
 const handleButtonClick = () => {
-  isAnimating.value = true;
-  setTimeout(() => {
-    isAnimating.value = false;
-    isLoading.value = true;
-    executeSignup();
-  }, 200); // Slower animation before changing text
+ isAnimating.value = true;
+    setTimeout(() => {
+      isAnimating.value = false;
+      emit('updateDiv', 'div2', mobileNumber.value);
+    }, 800); 
 };
 
-const executeSignup = () => {
-  setTimeout(() => {
-    isLoading.value = false;
-    emit('updateDiv', 'div2', mobileNumber.value);
-  }, 2000);
-};
+
 </script>
 
-<style scoped>
-/* Button base styles */
-.animated-button {
-  position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease-in-out;
-}
+<style>
 
-/* Hover effect: creating an animated background */
-.animated-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: left 0.15s ease-in; /* Slower animation */
-}
-
-/* Start animation from left to right on hover */
-.animated-button:hover::before {
-  left: 0;
-}
 </style>

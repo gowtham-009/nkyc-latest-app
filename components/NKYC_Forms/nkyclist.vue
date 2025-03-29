@@ -75,8 +75,10 @@
                     </div>
                 </div>
                 <div class="w-full">
-                    <Button type="button" label="Continue"
-                        class=" primary_color text-white w-full py-4 text-xl border-0  ">
+                    <Button type="button" label="Continue" @click="handleButtonClick"
+                        class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  ">
+                        {{ buttonText }}
+                        <span v-if="isAnimating" class="wave"></span>
                     </Button>
                 </div>
 
@@ -89,9 +91,10 @@
 <script setup>
 import { ref } from 'vue';
 import ThemeSwitch from '~/components/darkmode/darkmode.vue';
-
+const emit = defineEmits(['updateDiv']);
 const isPrimaryColor = ref(true);
-
+const buttonText = ref("Continue");
+const isAnimating = ref(false);
 const togglePrimaryColor = () => {
     isPrimaryColor.value = !isPrimaryColor.value;
 };
@@ -103,5 +106,15 @@ onMounted(() => {
         deviceHeight.value = window.innerHeight;
     });
 });
+
+
+
+const handleButtonClick = () => {
+ isAnimating.value = true;
+    setTimeout(() => {
+      isAnimating.value = false;
+      emit('updateDiv', 'div2');
+    }, 800); 
+};
 
 </script>

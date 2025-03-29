@@ -25,7 +25,11 @@
             </div>
           </div>
           <div class="w-full" >
-            <Button type="button" label="Verify OTP" class="primary_color text-white w-full py-4 text-xl border-0" @click="nkyclist()"  :disabled="!isOtpValid" >
+            <Button type="button"
+             label="Verify OTP" 
+             class="primary_color wave-btn text-white w-full py-4 text-xl border-0" @click="nkyclist()"  :disabled="!isOtpValid" >
+             {{ buttonText }}
+             <span v-if="isAnimating" class="wave"></span>
         </Button>
           </div>
         </div>
@@ -43,6 +47,8 @@ const deviceHeight = ref(0);
 const emit = defineEmits(['updateDiv']);
 const timeLeft = ref(60); // Start from 60 seconds
 const emailid = ref('')
+const isAnimating = ref(false);
+const buttonText = ref("Verify OTP");
 let timer = null;
 const e_otp=ref('')
 const props = defineProps({
@@ -90,7 +96,13 @@ e_otp.value.length === 6
 );
 const router=useRouter()
 const nkyclist=()=>{
-    router.push('/main')
+   
+
+   isAnimating.value = true;
+    setTimeout(() => {
+      isAnimating.value = false;
+      router.push('/main')
+    }, 800); 
 }
 const back=()=>{
     emit('updateDiv', 'div3');
