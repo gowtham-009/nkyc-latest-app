@@ -71,7 +71,7 @@
             <div class="w-full">
                 <Button type="button" label="Continue" 
             class=" primary_color text-white w-full py-4 text-xl border-0  "
-            @click="handleButtonClick">
+           >
            
           </Button>
             </div>
