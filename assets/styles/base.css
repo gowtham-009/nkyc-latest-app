@@ -32,16 +32,16 @@ body{
 
 /* Light Theme */
 :root {
-    --p-primary-color: var(--p-primary-500);
+    --p-primary-color: var(--p-primary-700);
     --p-primary-contrast-color: var(--p-surface-0);
-    --p-primary-hover-color: var(--p-primary-600);
+    --p-primary-hover-color: var(--p-primary-700);
     --p-primary-active-color: var(--p-primary-700);
     --p-content-border-color: var(--p-surface-200);
     --p-content-hover-background: var(--p-surface-100);
     --p-content-hover-color: var(--p-surface-800);
-    --p-highlight-background: var(--p-primary-500);
+    --p-highlight-background: var(--p-primary-700);
     --p-highlight-color: var(--p-primary-700);
-    --p-highlight-focus-background: var(--p-primary-500);
+    --p-highlight-focus-background: var(--p-primary-700);
     --p-highlight-focus-color: var(--p-primary-800);
     --p-text-color: var(--p-surface-700);
     --p-text-hover-color: var(--p-surface-800);
@@ -52,10 +52,10 @@ body{
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
     :root {
-        --p-primary-color: var(--p-primary-500);
+        --p-primary-color: var(--p-primary-700);
         --p-primary-contrast-color: var(--p-surface-900);
-        --p-primary-hover-color: var(--p-primary-500);
-        --p-primary-active-color: var(--p-primary-500);
+        --p-primary-hover-color: var(--p-primary-700);
+        --p-primary-active-color: var(--p-primary-700);
         --p-content-border-color: var(--p-surface-700);
         --p-content-hover-background: var(--p-surface-800);
         --p-content-hover-color: var(--p-surface-0);
