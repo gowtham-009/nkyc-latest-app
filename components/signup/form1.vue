@@ -82,8 +82,8 @@ const mobile_signup=()=>{
 
   setTimeout(() => {
     isLoading.value = false;
-   // emit('updateDiv', 'div2', mobileNumber.value);
-  }, 10000);
+    emit('updateDiv', 'div2', mobileNumber.value);
+  },5000);
 
 
 }
