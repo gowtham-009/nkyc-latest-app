@@ -6,7 +6,7 @@
                     <ThemeSwitch @click="togglePrimaryColor" />
                 </div>
                 <div class="w-full flex justify-center mt-2">
-                    <span class="text-black mt-2 dark:text-gray-400" style="font-size: 3rem;">NKYC</span>
+                    <!-- something -->
                 </div>
             </div>
             <div class="w-full p-2 flex flex-col justify-between" 
