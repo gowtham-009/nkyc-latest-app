@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="text-sm/6">
-            <label for="comments" class="text-gray-600 text-md text-justify">
+            <label for="comments" class="text-gray-600 leading-4 text-md text-justify">
               I'm a tax resident of India and not paying taxes to any other jurisdiction(s)
             </label>
           </div>
