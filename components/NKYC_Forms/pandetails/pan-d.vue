@@ -11,27 +11,27 @@
                 <p class="text-4xl  text-blue-950 font-bold dark:text-gray-400">
                     Enter your PAN detail
                 </p>
-                <p class="text-gray-500 leading-5 font-bold text-xl mt-3">These details are required by SEBI to open
+                <p class="text-gray-500 leading-5 font-bold text-lg mt-2">These details are required by SEBI to open
                     your Demat account.</p>
 
-                <div class="w-full mt-4">
+                <div class="w-full mt-2">
                     <paninput v-model="panno" />
                 </div>
 
-                <div class="w-full mt-4">
+                <div class="w-full mt-2">
                     <DOB v-model="dateval"/>
                 </div>
 
-                <Divider align="center" type="dotted" class="mt-4">
+                <Divider align="center" type="dotted" class="mt-2">
                     <b class="text-gray-600">OR</b>
                 </Divider>
 
                 <p class=" text-center text-xl font-bold text-blue-600" @click="panphoto">Upload your PAN Card</p>
 
-                <div class="w-full mt-3">
+                <div class="w-full mt-2">
                     <Pancheck v-model="checkboxval"/>
                 </div>
-                <div class="w-full flex gap-3 px-2 py-2 mt-4 bg-gray-100 rounded-lg dark:bg-gray-900">
+                <div class="w-full flex gap-3 px-2 py-2 mt-2 bg-gray-100 rounded-lg dark:bg-gray-900">
                    <p><i class="pi pi-star-fill text-xl text-yellow-400"></i></p>
                     <p class=" text-gray-500 ">Your account would be opened as per your PAN card details. Plese use the <span class="font-semibold">Offline Account Opening Form</span> if you are looking to open an HUF, Corporate, Partnership, Joint or NRI account.</p>
                 </div>
