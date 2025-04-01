@@ -75,7 +75,7 @@
 
         </div>
 
-        <iframe src="https://primeblock-fileupload.vercel.app/Test1 "></iframe>
+       
 
         <Drawer v-model:visible="visibleBottom" class="rounded-t-3xl"  position="bottom" style="height: auto">
                 <Button type="button" label="Open Camera"
