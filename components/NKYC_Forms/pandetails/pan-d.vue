@@ -33,7 +33,7 @@
                 </div>
                 <div class="w-full flex gap-3 px-2 py-2 mt-2 bg-gray-100 rounded-lg dark:bg-gray-900">
                    <p><i class="pi pi-star-fill text-xl text-yellow-400"></i></p>
-                    <p class=" text-gray-500 leading-5">Your account would be opened as per your PAN card details. Plese use the <span class="font-semibold">Offline Account Opening Form</span> if you are looking to open an HUF, Corporate, Partnership, Joint or NRI account.</p>
+                    <p class=" text-gray-500 text-md leading-5">Your account would be opened as per your PAN card details. Plese use the <span class="font-semibold">Offline Account Opening Form</span> if you are looking to open an HUF, Corporate, Partnership, Joint or NRI account.</p>
                 </div>
             </div>
 
