@@ -1,17 +1,19 @@
 <template>
     <div class="w-full">
-      <FloatLabel variant="in">
+      <label for="" class="text-gray-600 text-lg font-semibold">PAN</label>
         <InputText
           id="pan_label"
-          class="w-full"
+          class="w-full py-2"
           v-model="pan"
           variant="filled"
           @input="formatInput"
           @keypress="allowAlphanumeric"
           maxlength="10"
+          size="large"
+          placeholder="AGMLS6667Z"
+          
         />
-        <label for="pan_label">PAN NO*</label>
-      </FloatLabel>
+ 
     </div>
   </template>
   

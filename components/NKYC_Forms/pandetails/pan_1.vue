@@ -2,7 +2,7 @@
     <div class="primary_color" v-if="contentbox">
         <div class="flex justify-between primary_color items-center px-3"
             :style="{ height: deviceHeight * 0.08 + 'px' }">
-            <span class="text-white cursor-pointer" @click="back()"><i class="pi pi-angle-left text-3xl"></i></span>
+            <span @click="back()" class="text-white cursor-pointer"><i class="pi pi-angle-left text-3xl"></i></span>
             <ThemeSwitch />
         </div>
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black"
@@ -59,7 +59,7 @@
                         </div>
                         <div class="p-2">
                             <p class="text-gray-500 leading-6 font-bold text-lg">
-                                Photo must be Clear.
+                                Photo must be clear.
                             </p>
                         </div>
                     </div>
@@ -69,8 +69,7 @@
 
             <div class="w-full p-1" label="Continue">
                 <Button type="button" label="Continue" @click="visibleBottom = true"
-                    class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  ">
-                </Button>
+                    class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  "></Button>
             </div>
 
         </div>
@@ -79,16 +78,17 @@
     <div class="w-full p-2" v-if="camerabox">
         <div v-if="showCamera" class="fixed inset-0 bg-black flex items-center justify-center">
             <video ref="videoRef" autoplay class="w-full h-full object-cover"></video>
-            
-            <!-- Close Button at Top Left -->
 
-            <Button type="button" icon="pi pi-angle-left"  @click="stopCamera"
-            class="absolute bg-gray-50 top-4 left-4 text-black border-0 p-2 rounded  ">
-        </Button>
-           
-            
+            <!-- Canvas for capturing image -->
+            <canvas ref="canvasRef" class="hidden"></canvas>
+
+            <!-- Close Button at Top Left -->
+            <Button type="button" icon="pi pi-angle-left" @click="backpan()"
+                class="absolute bg-gray-50 top-4 left-4 text-black border-0 p-2 rounded" style="z-index: 5;">
+            </Button>
+
             <!-- Four Edge Frames -->
-            <div class="absolute inset-0  flex justify-between items-center px-5" style="top: -43%;">
+            <div class="absolute inset-0 flex justify-between items-center px-5" style="top: -43%;">
                 <div class="w-12 h-12 border-4 border-blue-900 border-b-0 border-r-0"></div>
                 <div class="w-12 h-12 border-4 border-blue-900 border-b-0 border-l-0"></div>
             </div>
@@ -96,59 +96,70 @@
                 <div class="w-12 h-12 border-4 border-blue-900 border-t-0 border-r-0"></div>
                 <div class="w-12 h-12 border-4 border-blue-900 border-t-0 border-l-0"></div>
             </div>
-            
+
             <!-- Click Photo Button at Bottom Center -->
             <div class="absolute bottom-10 w-full flex justify-center">
-                <Button type="button" label="Click Photo" class="primary_color wave-btn text-white px-20 py-4 text-xl border-0">
+                <Button type="button" :label="photoCaptured ? 'Retake' : 'Click Photo'"
+                        @click="handleCapture"
+                        class="primary_color wave-btn text-white px-20 py-4 text-xl border-0">
                 </Button>
+            </div>
+
+            <!-- Display Captured Image -->
+            <div v-if="photoCaptured" class="absolute bottom-32 w-full flex justify-center">
+                <img :src="capturedImage" alt="Captured Image" class="w-full max-w-md"/>
             </div>
         </div>
     </div>
 
     <Drawer v-model:visible="visibleBottom" class="rounded-t-3xl" position="bottom" style="height: auto">
         <Button type="button" label="Open Camera" @click="cameraopen"
-            class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  ">
+            class=" primary_color wave-btn text-white w-full py-4 text-xl border-0">
         </Button>
         <p class="text-center font-bold text-blue-600 mt-3 text-2xl">Upload from gallery</p>
     </Drawer>
 </template>
-
 <script setup>
 import ThemeSwitch from '~/components/darkmode/darkmode.vue'
-
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+
 const deviceHeight = ref(0);
 const visibleBottom = ref(false);
-const contentbox = ref(true)
-const camerabox = ref(false)
+const contentbox = ref(true);  // Initially showing content box
+const camerabox = ref(false);  // Initially not showing camera box
+const showCamera = ref(false);
+const photoCaptured = ref(false); // To track if the photo is captured
+const capturedImage = ref(null); // To store the captured image as a data URL
+const videoRef = ref(null);
+const canvasRef = ref(null);
+let stream = null;
+
 onMounted(() => {
     deviceHeight.value = window.innerHeight;
     window.addEventListener('resize', () => {
         deviceHeight.value = window.innerHeight;
     });
-
-
-
-
-
 });
 
+const backpan = () => {
+ 
+    stopCamera();
 
+    // Show the content box and hide the camera box
+    contentbox.value = true;
+    camerabox.value = false;
 
-const back = () => {
-    emit('updateDiv', 'div1');
-}
-
-const showCamera = ref(false);
-const videoRef = ref(null);
-let stream = null;
-
+    // Reset any states related to the camera
+    photoCaptured.value = false;
+    capturedImage.value = null;
+};
 
 const cameraopen = async () => {
     showCamera.value = true;
     contentbox.value = false;
     camerabox.value = true;
     visibleBottom.value = false;
+    photoCaptured.value = false;
     try {
         stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: "environment" },
@@ -164,20 +175,47 @@ const cameraopen = async () => {
 
 const stopCamera = () => {
     if (stream) {
-        stream.getTracks().forEach(track => track.stop());
+        stream.getTracks().forEach(track => track.stop()); // Stop all tracks
     }
-    showCamera.value = false;
-    contentbox.value = true;
-    camerabox.value = false;
+    showCamera.value = false; // Hide the camera
+    camerabox.value = false; // Hide the camera box
+};
+
+const handleCapture = () => {
+   
+    if (photoCaptured.value) {
+        // If photo is already taken, reopen the camera
+        photoCaptured.value = false;
+        capturedImage.value = null; // Clear the captured image
+        cameraopen();
+    } else {
+        // Capture the photo
+        captureImage();
+    }
+};
+
+const captureImage = () => {
+    if (videoRef.value && canvasRef.value) {
+        const video = videoRef.value;
+        const canvas = canvasRef.value;
+        const ctx = canvas.getContext('2d');
+        // Set canvas size to video size
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        // Draw the current video frame on the canvas
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        // Convert the canvas to an image
+        capturedImage.value = canvas.toDataURL('image/jpeg');
+        photoCaptured.value = true;
+    }
 };
 
 onBeforeUnmount(() => {
     stopCamera();
 });
-</script>
+const emit = defineEmits(['updateDiv']);
+const back=()=>{
 
-<style>
-.p-button-text.p-button-secondary {
-    display: none !important;
+    emit('updateDiv', 'div1');
 }
-</style>
+</script>
