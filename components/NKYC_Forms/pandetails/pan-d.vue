@@ -8,10 +8,10 @@
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-4 px-2">
-                <p class="text-4xl  text-blue-950 font-bold dark:text-gray-400">
+                <p class="text-3xl  text-blue-950 font-bold dark:text-gray-400">
                     Enter your PAN detail
                 </p>
-                <p class="text-gray-500 leading-5 font-bold text-lg mt-2">These details are required by SEBI to open
+                <p class="text-gray-500 leading-5 font-bold text-md mt-2">These details are required by SEBI to open
                     your Demat account.</p>
 
                 <div class="w-full mt-2">
@@ -22,7 +22,7 @@
                     <DOB v-model="dateval"/>
                 </div>
 
-                <Divider align="center" type="dotted" class="mt-2">
+                <Divider align="center" type="dotted">
                     <b class="text-gray-600">OR</b>
                 </Divider>
 
@@ -33,7 +33,7 @@
                 </div>
                 <div class="w-full flex gap-3 px-2 py-2 mt-2 bg-gray-100 rounded-lg dark:bg-gray-900">
                    <p><i class="pi pi-star-fill text-xl text-yellow-400"></i></p>
-                    <p class=" text-gray-500 ">Your account would be opened as per your PAN card details. Plese use the <span class="font-semibold">Offline Account Opening Form</span> if you are looking to open an HUF, Corporate, Partnership, Joint or NRI account.</p>
+                    <p class=" text-gray-500 leading-5">Your account would be opened as per your PAN card details. Plese use the <span class="font-semibold">Offline Account Opening Form</span> if you are looking to open an HUF, Corporate, Partnership, Joint or NRI account.</p>
                 </div>
             </div>
 
