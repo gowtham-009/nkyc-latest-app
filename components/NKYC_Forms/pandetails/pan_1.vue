@@ -15,7 +15,7 @@
                     Click a photo of your PAN card or upload from files
                 </p>
 
-                <div class="w-full mt-3 rounded-lg px-3 py-3 bg-blue-50">
+                <div class="w-full mt-3 rounded-lg px-3 py-3 bg-blue-50 dark:bg-slate-900">
                     <h2 class="text-blue-900 font-bold mt-3">Please remember:</h2>
                     <div class="w-full flex gap-3 mt-3" >
                         <div class="p-2 bg-blue-200 flex justify-center items-center rounded-lg" >
