@@ -20,7 +20,7 @@
 
                     <div class="w-full flex  gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-2 py-1 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
                             <span><i class="text-3xl text-blue-900 pi pi-id-card"></i></span>
                         </div>
                         <div class="p-2">
@@ -32,7 +32,7 @@
 
                     <div class="w-full flex  gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-1 py-1 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
                             <span><i class="text-3xl text-blue-900 pi pi-image"></i></span>
                         </div>
                         <div class="p-2">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="w-full flex gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-1 py-1 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
                             <span><i class="text-3xl text-blue-900 pi pi-star"></i></span>
                         </div>
                         <div class="p-2">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="w-full flex gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-1 py-1 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
                             <span><i class="text-3xl text-blue-900 pi pi-image"></i></span>
                         </div>
                         <div class="p-2">
