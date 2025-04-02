@@ -13,7 +13,7 @@
                     Ventura Securities Onboarding
                 </p>
 
-                <p class="mt-1 text-justify leading-6 text-gray-500 text-xl">
+                <p class="mt-1 text-justify  text-gray-500 text-xl">
                     You are about to link your DigiLocker account with Ventura Securities Onboarding application of
                     Ventura Securities Ltd.. You will be signed up for DigiLocker account if it does not exist.
                 </p>
