@@ -5,7 +5,7 @@
             <span @click="back()" class="text-white cursor-pointer"><i class="pi pi-angle-left text-3xl"></i></span>
             <ThemeSwitch />
         </div>
-        <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black"
+        <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black" v-if="panbox"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-4 px-2">
                 <p class="text-4xl text-blue-900 font-bold dark:text-gray-400">
@@ -20,7 +20,7 @@
 
                     <div class="w-full flex  gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                            class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span><i class="text-3xl text-blue-900 pi pi-id-card"></i></span>
                         </div>
                         <div class="p-2">
@@ -32,7 +32,7 @@
 
                     <div class="w-full flex  gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span><i class="text-3xl text-blue-900 pi pi-image"></i></span>
                         </div>
                         <div class="p-2">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="w-full flex gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span><i class="text-3xl text-blue-900 pi pi-star"></i></span>
                         </div>
                         <div class="p-2">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="w-full flex gap-3 mt-2">
                         <div
-                            class="bg-blue-200 px-2 py-2 rounded-lg flex items-center justify-center w-12 h-12 dark:bg-gray-800">
+                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span><i class="text-3xl text-blue-900 pi pi-image"></i></span>
                         </div>
                         <div class="p-2">
@@ -72,6 +72,41 @@
                     class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  "></Button>
             </div>
 
+
+
+        </div>
+
+        <div class="w-full flex flex-col justify-between p-2 bg-white rounded-t-3xl dark:bg-black" v-if="uploadbox"
+            :style="{ height: deviceHeight * 0.92 + 'px' }">
+
+
+
+
+            <div class="w-full p-2 mt-4">
+                <p class="text-4xl text-blue-900 font-bold dark:text-gray-400">
+                    PAN card captured
+                </p>
+
+                <p class="text-lg leading-5 text-gray-500 font-bold mt-2">
+                    Proceed only if the contents of the photo are clearly visible.
+                </p>
+
+                <div class="w-full flex justify-center mt-2">
+                    <div class="w-2/3 p-1" style=" position: relative;">
+                        <img v-if="imageUrl" :src="imageUrl" alt="Preview" class="preview-img" />
+                        <Button type="button"  icon="pi pi-sync" class="text-white bg-blue-600   text-xl border-0" style="position: absolute; right: 8%; bottom: 4%;">
+                        </Button>
+                    </div>
+                </div>
+                <div class="w-full mt-2">
+                    <p class="text-blue-950 font-semibold text-2xl text-center">Poor photo quality?</p>
+                    <p class="text-center font-bold text-blue-600 mt-3 text-2xl" @click="openFilePicker">Upload from gallery</p>
+                </div>
+            </div>
+            <div class="w-full" >
+                <Button type="button" label="Next"
+                    class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  "></Button>
+            </div>
         </div>
     </div>
 
@@ -99,25 +134,28 @@
 
             <!-- Click Photo Button at Bottom Center -->
             <div class="absolute bottom-10 w-full flex justify-center">
-                <Button type="button" :label="photoCaptured ? 'Retake' : 'Click Photo'"
-                        @click="handleCapture"
-                        class="primary_color wave-btn text-white px-20 py-4 text-xl border-0">
+                <Button type="button" :label="photoCaptured ? 'Retake' : 'Click Photo'" @click="handleCapture"
+                    class="primary_color wave-btn text-white px-20 py-4 text-xl border-0">
                 </Button>
             </div>
 
             <!-- Display Captured Image -->
             <div v-if="photoCaptured" class="absolute bottom-32 w-full flex justify-center">
-                <img :src="capturedImage" alt="Captured Image" class="w-full max-w-md"/>
+                <img :src="capturedImage" alt="Captured Image" class="w-full max-w-md" />
             </div>
         </div>
     </div>
+
+
 
     <Drawer v-model:visible="visibleBottom" class="rounded-t-3xl" position="bottom" style="height: auto">
         <Button type="button" label="Open Camera" @click="cameraopen"
             class=" primary_color wave-btn text-white w-full py-4 text-xl border-0">
         </Button>
-        <p class="text-center font-bold text-blue-600 mt-3 text-2xl">Upload from gallery</p>
+        <p class="text-center font-bold text-blue-600 mt-3 text-2xl" @click="openFilePicker">Upload from gallery</p>
     </Drawer>
+
+    <input type="file" ref="fileInput" @change="handleFileChange" accept="image/*" class="hidden" />
 </template>
 <script setup>
 import ThemeSwitch from '~/components/darkmode/darkmode.vue'
@@ -127,6 +165,8 @@ const deviceHeight = ref(0);
 const visibleBottom = ref(false);
 const contentbox = ref(true);  // Initially showing content box
 const camerabox = ref(false);  // Initially not showing camera box
+const panbox = ref(true); // Initially showing pan box
+const uploadbox = ref(false); // Initially not showing upload box
 const showCamera = ref(false);
 const photoCaptured = ref(false); // To track if the photo is captured
 const capturedImage = ref(null); // To store the captured image as a data URL
@@ -142,7 +182,7 @@ onMounted(() => {
 });
 
 const backpan = () => {
- 
+
     stopCamera();
 
     // Show the content box and hide the camera box
@@ -182,7 +222,7 @@ const stopCamera = () => {
 };
 
 const handleCapture = () => {
-   
+
     if (photoCaptured.value) {
         // If photo is already taken, reopen the camera
         photoCaptured.value = false;
@@ -214,8 +254,36 @@ onBeforeUnmount(() => {
     stopCamera();
 });
 const emit = defineEmits(['updateDiv']);
-const back=()=>{
+const back = () => {
 
-    emit('updateDiv', 'div1');
+    emit('updateDiv', 'div2');
 }
+
+const fileInput = ref(null);
+const selectedFile = ref(null);
+const imageUrl = ref(null);
+const openFilePicker = () => {
+    if (fileInput.value) {
+        fileInput.value.click();
+        visibleBottom.value = false;
+       
+    }
+};
+
+const handleFileChange = (event) => {
+    const file = event.target.files[0]; // Get the selected file
+    if (file) {
+        selectedFile.value = file;
+        console.log("Selected file:", file);
+        imageUrl.value = URL.createObjectURL(file);
+        if(imageUrl.value) {
+            uploadbox.value = true;
+            panbox.value = false;
+        } else {
+            uploadbox.value = false;
+            panbox.value = true;
+        }
+
+    }
+};
 </script>

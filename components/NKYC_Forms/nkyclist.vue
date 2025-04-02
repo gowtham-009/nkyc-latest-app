@@ -21,7 +21,7 @@
 
                     <div class="w-full px-4 mt-2">
                         <div class="w-full flex gap-5">
-                            <div class="w-14 h-14 md:w-16 md:h-16 sm:w-20 sm:h-20 bg-blue-200 dark:bg-slate-900  rounded-full flex justify-center items-center p-2">
+                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-folder-open text-blue-900 text-3xl md:text-4xl"></i></span>
                             </div>
                             <div class=" p-1">
@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="w-14 h-14 md:w-16 md:h-16 sm:w-20 sm:h-20 bg-blue-200 dark:bg-slate-900  rounded-full flex justify-center items-center p-1">
+                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-user text-blue-900 text-3xl" ></i></span>
                             </div>
                             <div class="p-1">
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="w-14 h-14 md:w-16 md:h-16 sm:w-20 sm:h-20 bg-blue-200 dark:bg-slate-900 rounded-full flex justify-center items-center p-1">
+                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-credit-card text-blue-900 text-3xl" ></i></span>
                             </div>
                             <div class="p-1">
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="w-14 h-14 md:w-16 md:h-16 sm:w-20 sm:h-20 bg-blue-200 dark:bg-slate-900 rounded-full flex justify-center items-center p-1">
+                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-verified text-blue-900 text-3xl" ></i></span>
                             </div>
                             <div class="p-1">
@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="w-14 h-14 md:w-16 md:h-16 sm:w-20 sm:h-20 bg-blue-200 dark:bg-slate-900 rounded-full flex justify-center items-center p-1">
+                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-pen-to-square text-blue-900 text-3xl"></i></span>
                             </div>
                             <div class="p-1">

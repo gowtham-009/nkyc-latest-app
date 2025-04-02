@@ -85,7 +85,7 @@ const handleButtonClick = () => {
  isAnimating.value = true;
     setTimeout(() => {
       isAnimating.value = false;
-     
+      emit('updateDiv', 'div4');
     }, 800); 
 };
 </script>

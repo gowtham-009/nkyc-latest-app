@@ -9,6 +9,12 @@
   <div v-if="currentForm === 'div3'">
     <PAN_1 @updateDiv="handleUpdateDiv" />
   </div>
+  <div v-if="currentForm === 'div4'">
+    <EKYC @updateDiv="handleUpdateDiv" />
+  </div>
+  <div v-if="currentForm === 'div5'">
+    <AADHARPAN @updateDiv="handleUpdateDiv" />
+  </div>
   
 </template>
 
@@ -16,6 +22,8 @@
 import NKYCList from '~/components/NKYC_Forms/nkyclist.vue'
 import PAN_d from '~/components/NKYC_Forms/pandetails/pan-d.vue'
 import PAN_1 from '~/components/NKYC_Forms/pandetails/pan_1.vue'
+import EKYC from '~/components/NKYC_Forms/pandetails/e-kyc.vue'
+import AADHARPAN from '~/components/NKYC_Forms/pandetails/aadharpan.vue'
 const currentDiv = ref('');
 const currentForm = ref('div1'); // Default form
 const handleUpdateDiv = (value) => {
