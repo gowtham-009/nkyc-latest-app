@@ -80,7 +80,9 @@ const back = () => {
 
 
 
-
+const handleButtonClick=()=>{
+    emit('updateDiv', 'div8');
+}
 
 
 </script>

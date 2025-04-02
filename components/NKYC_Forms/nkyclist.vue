@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="w-full dark:bg-black" :class="{ 'primary_color_list': isPrimaryColor }">
-            <div class="w-full p-2 "  :style="{ height: deviceHeight * 0.15 + 'px' }">
+            <div class="w-full p-2 "  :style="{ height: deviceHeight * 0.05 + 'px' }">
                 <div class="w-full flex justify-end">
                     <ThemeSwitch @click="togglePrimaryColor" />
                 </div>
@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="w-full p-2 flex flex-col justify-between" 
-                :style="{ height: deviceHeight * 0.85 + 'px' }">
+                :style="{ height: deviceHeight * 0.95 + 'px' }">
                 <div class="w-full p-1" >
                     <div class="w-full">
                         <p class="text-4xl text-center text-blue-600 font-bold">

@@ -21,6 +21,13 @@
   <div v-if="currentForm === 'div7'">
     <DIGILOCK @updateDiv="handleUpdateDiv" />
   </div>
+  <div v-if="currentForm === 'div8'">
+    <DIGILOCKSUBMISSION @updateDiv="handleUpdateDiv" />
+  </div>
+
+  <div v-if="currentForm === 'div9'">
+    <PANCONFIRMATION @updateDiv="handleUpdateDiv" />
+  </div>
   
 </template>
 
@@ -32,7 +39,8 @@ import EKYC from '~/components/NKYC_Forms/pandetails/e-kyc.vue'
 import AADHARPAN from '~/components/NKYC_Forms/pandetails/aadharpan.vue'
 import AADHARPANotp from '~/components/NKYC_Forms/pandetails/aadharotp.vue'
 import DIGILOCK from '~/components/NKYC_Forms/pandetails/digilock.vue'
-
+import DIGILOCKSUBMISSION from '~/components/NKYC_Forms/pandetails/digilock_submission.vue'
+import PANCONFIRMATION from '~/components/NKYC_Forms/pandetails/panconfirmation.vue'
 const currentDiv = ref('');
 const currentForm = ref('div1'); // Default form
 const handleUpdateDiv = (value) => {
