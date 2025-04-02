@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="w-full mt-2">
-                    <p class="text-blue-950 font-semibold text-2xl text-center">Poor photo quality?</p>
+                    <p class="text-blue-950 font-semibold text-2xl text-center dark:text-gray-400">Poor photo quality?</p>
                     <p class="text-center font-bold text-blue-600 mt-3 text-2xl" @click="openFilePicker">Upload from gallery</p>
                 </div>
             </div>
