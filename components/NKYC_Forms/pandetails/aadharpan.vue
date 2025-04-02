@@ -7,18 +7,18 @@
         </div>
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
-            <div class="w-full mt-4 px-2">
+            <div class="w-full mt-2 px-2">
                 <p class="text-blue-500 font-bold text-2xl text-center">Meri Pehchaan</p>
-                <p class="text-center mt-3 text-black font-bold text-2xl">
+                <p class="text-center mt-2 text-black font-bold text-2xl">
                     Ventura Securities Onboarding
                 </p>
 
-                <p class="mt-2 text-justify text-gray-500 text-xl">
+                <p class="mt-1 text-justify leading-6 text-gray-500 text-xl">
                     You are about to link your DigiLocker account with Ventura Securities Onboarding application of
                     Ventura Securities Ltd.. You will be signed up for DigiLocker account if it does not exist.
                 </p>
 
-                <div class="w-full mt-3">
+                <div class="w-full mt-2">
                     <Aadharno />
                 </div>
 
@@ -39,7 +39,7 @@
 
                 <p class="text-gray-500 text-md text-center mt-2">Unable to read the above image? <span class="text-blue-600">Try another!</span></p>
 
-                <div class="w-full p-1 mt-3">
+                <div class="w-full p-1 mt-2">
                 <Button type="button" @click="handleButtonClick"
                     class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  ">
                     {{ buttonText }}
