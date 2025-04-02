@@ -9,7 +9,7 @@
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-2 px-2">
                 <p class="text-blue-500 font-bold text-2xl text-center">Meri Pehchaan</p>
-                <p class="text-center mt-2 text-black font-bold text-2xl dark:text-gray-400">
+                <p class="text-center mt-2 leading-6 text-black font-bold text-2xl dark:text-gray-400">
                     Ventura Securities Onboarding
                 </p>
 
