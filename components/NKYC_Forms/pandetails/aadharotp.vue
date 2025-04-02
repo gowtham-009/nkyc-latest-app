@@ -13,7 +13,7 @@
                     Ventura Securities Onboarding 
                 </p>
 
-                <p class="mt-1 text-justify  text-gray-500 text-xl">
+                <p class="mt-3 text-justify  text-gray-500 text-xl">
                 UIDAI has sent a temporary OTP to your mobile ending in ******637(valid for 10 mins)
                 </p>
 
@@ -72,11 +72,17 @@ onMounted(() => {
 const emit = defineEmits(['updateDiv']);
 const back = () => {
 
-    emit('updateDiv', 'div4');
+    emit('updateDiv', 'div5');
 }
 
 
-
+const handleButtonClick=()=>{
+    isAnimating.value = true;
+    setTimeout(() => {
+      isAnimating.value = false;
+      emit('updateDiv', 'div7');
+    }, 800); 
+}
 
 
 

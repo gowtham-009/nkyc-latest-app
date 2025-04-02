@@ -18,6 +18,9 @@
   <div v-if="currentForm === 'div6'">
     <AADHARPANotp @updateDiv="handleUpdateDiv" />
   </div>
+  <div v-if="currentForm === 'div7'">
+    <DIGILOCK @updateDiv="handleUpdateDiv" />
+  </div>
   
 </template>
 
@@ -28,6 +31,8 @@ import PAN_1 from '~/components/NKYC_Forms/pandetails/pan_1.vue'
 import EKYC from '~/components/NKYC_Forms/pandetails/e-kyc.vue'
 import AADHARPAN from '~/components/NKYC_Forms/pandetails/aadharpan.vue'
 import AADHARPANotp from '~/components/NKYC_Forms/pandetails/aadharotp.vue'
+import DIGILOCK from '~/components/NKYC_Forms/pandetails/digilock.vue'
+
 const currentDiv = ref('');
 const currentForm = ref('div1'); // Default form
 const handleUpdateDiv = (value) => {
