@@ -92,10 +92,9 @@
                 </p>
 
                 <div class="w-full flex justify-center mt-2">
-                    <div class="w-2/3 p-1" style=" position: relative;">
+                    <div class="w-2/3 flex justify-center p-1" >
                         <img v-if="imageUrl" :src="imageUrl" alt="Preview" class="preview-img h-80"  />
-                        <Button type="button"  icon="pi pi-sync" class="text-white bg-blue-600   text-xl border-0" style="position: absolute; right: 8%; bottom: 4%;">
-                        </Button>
+                       
                     </div>
                 </div>
                 <div class="w-full mt-2">
