@@ -9,7 +9,7 @@
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-2 px-2">
                 <p class="text-blue-500 font-bold text-2xl text-center">Meri Pehchaan</p>
-                <p class="text-center mt-2 text-black font-bold text-2xl">
+                <p class="text-center mt-2 text-black font-bold text-2xl dark:text-gray-400">
                     Ventura Securities Onboarding
                 </p>
 
@@ -28,7 +28,7 @@
                     </p>
                 </div>
 
-                <div class="w-full flex gap-2 mt-2">
+                <div class="w-full flex gap-2 mt-1">
                     <div class="w-full text-gray-400 flex justify-center items-center" style="border: 1px solid gray;">
                         vdfovjsdo
                     </div>
@@ -49,7 +49,7 @@
             </div>
 
             <div class="w-full p-1">
-             <p class="text-center text-blue-600 text-lg">
+             <p class="text-center leading-5 text-blue-600 text-lg">
                 Return to Ventura Securities Onboarding
              </p>
             </div>
