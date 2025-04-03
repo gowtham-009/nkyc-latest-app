@@ -71,7 +71,7 @@
 }
 
 .p-listbox-option-group {
-    @apply m-0 px-3 py-2 text-surface-500 dark:text-surface-400 font-semibold 
+    @apply m-0 px-3 py-2 text-surface-500 dark:text-surface-400 font-normal 
 }
 
 .p-listbox-empty-message {

@@ -17,7 +17,7 @@
 }
 
 .p-dialog-title {
-    @apply font-semibold text-xl
+    @apply font-normal text-xl
 }
 
 .p-dialog-footer {

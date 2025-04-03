@@ -7,7 +7,7 @@
 }
 
 .p-progressbar-label {
-    @apply text-primary-contrast text-xs font-semibold
+    @apply text-primary-contrast text-xs font-normal
 }
 
 .p-progressbar-determinate .p-progressbar-value {

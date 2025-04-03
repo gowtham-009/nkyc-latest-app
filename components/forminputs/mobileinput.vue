@@ -1,10 +1,10 @@
 <template>
   <div class="flex gap-3">
-    <InputText type="text" class="w-16 font-bold" v-model="countryphonenocode" disabled />
+    <InputText type="text" class="w-16 font-normal" v-model="countryphonenocode" disabled />
     
     <InputText
       id="mobile"
-      class="w-full font-bold"
+      class="w-full font-normal"
       v-model="localPhoneNo"
       inputmode="numeric"
       type="number"

@@ -8,12 +8,12 @@
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-2 px-2">
-                <p class="text-blue-500 font-bold text-2xl text-center">Meri Pehchaan</p>
-                <p class="text-center mt-2 leading-6 text-black font-bold text-2xl dark:text-gray-400">
+                <p class="text-blue-500 font-medium text-2xl text-center">Meri Pehchaan</p>
+                <p class="text-center mt-2 leading-6 text-black font-medium text-2xl dark:text-gray-400">
                     Ventura Securities Onboarding
                 </p>
 
-                <p class="mt-1 text-justify  text-gray-500 text-xl">
+                <p class="mt-1 text-justify font-normal  text-gray-500 text-xl">
                     You are about to link your DigiLocker account with Ventura Securities Onboarding application of
                     Ventura Securities Ltd.. You will be signed up for DigiLocker account if it does not exist.
                 </p>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="w-full mt-2">
-                    <p class="text-gray-600 text-xl">
+                    <p class="text-gray-600 font-normal text-xl">
                         Please enter the following text in the box below:
                     </p>
                 </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                <p class="text-gray-500 text-md text-center mt-2">Unable to read the above image? <span class="text-blue-600">Try another!</span></p>
+                <p class="text-gray-500 text-md font-normal text-center mt-2">Unable to read the above image? <span class="text-blue-600">Try another!</span></p>
 
                 <div class="w-full p-1 mt-2">
                 <Button type="button" @click="handleButtonClick"
@@ -49,7 +49,7 @@
             </div>
 
             <div class="w-full p-1">
-             <p class="text-center leading-5 text-blue-600 text-lg">
+             <p class="text-center font-normal leading-5 text-blue-600 text-lg">
                 Return to Ventura Securities Onboarding
              </p>
             </div>

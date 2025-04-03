@@ -1,6 +1,6 @@
 
 <template>
-          <label for="" class="text-gray-600 text-lg font-semibold">DOB</label>
+          <label for="" class="text-gray-600 text-lg font-normal">DOB</label>
     <div class="card flex justify-center">
         <DatePicker placeholder="As per PAN - DD/MM/YYYY" v-model="date" class="w-full" showIcon  dateFormat="dd/mm/yy" />
     </div>

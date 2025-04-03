@@ -90,7 +90,7 @@ input.p-select-label {
 }
 
 .p-select-option-group {
-    @apply m-0 px-3 py-2 bg-transparent text-surface-500 dark:text-surface-400 font-semibold
+    @apply m-0 px-3 py-2 bg-transparent text-surface-500 dark:text-surface-400 font-normal
 }
 
 .p-select-list {

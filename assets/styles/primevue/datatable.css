@@ -210,7 +210,7 @@
 }
 
 .p-datatable-column-title {
-    @apply font-semibold
+    @apply font-normal
 }
 
 .p-datatable-tbody > tr {
@@ -249,7 +249,7 @@
 }
 
 .p-datatable-column-footer {
-    @apply font-semibold
+    @apply font-normal
 }
 
 .p-datatable-sortable-column {

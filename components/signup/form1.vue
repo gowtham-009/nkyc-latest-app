@@ -15,8 +15,8 @@
     <div class="w-full p-2 flex flex-col justify-between bg-white rounded-t-3xl dark:bg-black" :style="{ height: deviceHeight * 0.70 + 'px' }">
       <div class="w-full mt-3 px-3 flex flex-col justify-between">
         <div class="w-full">
-          <p class="text-3xl font-bold dark:text-gray-400">Ready to get started?</p>
-          <p class="mt-2 leading-6 text-xl font-semibold text-gray-500">Enter your number to help us set up your investment account</p>
+          <p class="text-3xl font-medium dark:text-gray-400">Ready to get started?</p>
+          <p class="mt-2 leading-6 text-xl font-normal text-gray-500">Enter your number to help us set up your investment account</p>
         </div>
 
         <div class="w-full mt-4">
@@ -28,8 +28,8 @@
         </div>
 
         <div class="w-full mt-4">
-          <p class="text-md text-center text-gray-500">
-            By processing, you accept Venture's <span class="font-semibold">Terms of Use</span> and <span class="font-semibold">Privacy Policy</span>
+          <p class="text-md text-center font-normal text-gray-500">
+            By processing, you accept Venture's <span class="font-medium">Terms of Use</span> and <span class="font-normal">Privacy Policy</span>
           </p>
         </div>
       </div>

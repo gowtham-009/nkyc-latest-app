@@ -12,7 +12,10 @@ export default defineNuxtConfig({
           ]
         }
       },
-    modules: [ "@primevue/nuxt-module"],
+      modules: [
+        '@primevue/nuxt-module'
+      ],
+ 
     css: ['@/assets/styles/tailwind.css', '@/assets/styles/base.css', '@/assets/styles/global.css'],
     primevue: {
         options: { theme: 'none',

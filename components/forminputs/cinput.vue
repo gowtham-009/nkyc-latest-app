@@ -3,7 +3,7 @@
       
       <InputText
         id="mobile"
-        class="w-full font-bold"
+        class="w-full font-medium"
         v-model="local"
     
      

@@ -110,7 +110,7 @@
 }
 
 .p-treetable-column-title {
-    @apply font-semibold
+    @apply font-normal
 }
 
 .p-treetable-tbody > tr {
@@ -149,7 +149,7 @@
 }
 
 .p-treetable-column-footer {
-    @apply font-semibold
+    @apply font-normal
 }
 
 .p-treetable-sortable-column {

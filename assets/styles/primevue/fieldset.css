@@ -28,7 +28,7 @@
 }
 
 .p-fieldset-legend-label {
-    @apply font-semibold;
+    @apply font-normal;
 }
 
 .p-fieldset-toggle-icon {

@@ -92,7 +92,7 @@
 }
 
 .p-megamenu-submenu-label {
-    @apply px-3 py-2 text-surface-500 dark:text-surface-400 font-semibold bg-transparent
+    @apply px-3 py-2 text-surface-500 dark:text-surface-400 font-normal bg-transparent
 }
 
 .p-megamenu-separator {
