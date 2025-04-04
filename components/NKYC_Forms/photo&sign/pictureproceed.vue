@@ -18,7 +18,7 @@
 
                 <div class="w-full p-1 flex justify-center mt-3" >
                  
-                        <img v-if="props.data" :src="props.data" class="rounded-xl" alt="Base64 Image" />
+                        <img v-if="props.data" :src="props.data" class="rounded-xl hei"  alt="Base64 Image" />
                      
                    
                 </div>
@@ -95,3 +95,8 @@ const handleButtonClick = () => {
 
 
 </script>
+<style>
+.hei{
+    height: 30vh;
+}
+</style>
