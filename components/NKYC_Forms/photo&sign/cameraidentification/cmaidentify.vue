@@ -168,8 +168,8 @@
   
   <style scoped>
   .camera-wrapper {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid #00BFFF;
