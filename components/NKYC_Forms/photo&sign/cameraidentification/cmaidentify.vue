@@ -6,8 +6,8 @@
         <canvas ref="canvas" class="hidden"></canvas>
       </div>
   
-      <span class="mt-4">Face distance score: {{ Math.min(faceDistanceScore, 100).toFixed(2) }}</span>
-      <span>Face Visible: {{ faceProperlyVisible ? '✅ Yes' : '❌ No' }}</span>
+      <span class="mt-4 dark:text-gray-400">Face distance score: {{ Math.min(faceDistanceScore, 100).toFixed(2) }}</span>
+      <span class="dark:text-gray-400">Face Visible: {{ faceProperlyVisible ? '✅ Yes' : '❌ No' }}</span>
 </div>
   </template>
   

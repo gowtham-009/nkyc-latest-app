@@ -141,6 +141,11 @@ console.log(imageSrc.value)
     }, 800); 
 
 }
+
+
+const back = () => {
+    emit('updateDiv', 'signature');
+}
 </script>
 <style>
 canvas {

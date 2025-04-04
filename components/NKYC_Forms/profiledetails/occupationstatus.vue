@@ -68,6 +68,9 @@ const selectMaritalStatus = (value) => {
    
 };
 
+const back = () => {
+    emit('updateDiv', 'married');
+};
 
 
 onMounted(() => {

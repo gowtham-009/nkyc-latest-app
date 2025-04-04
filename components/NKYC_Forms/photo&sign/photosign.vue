@@ -1,8 +1,7 @@
 <template>
     <div class="primary_color">
-        <div class="flex justify-between primary_color items-center px-3"
+        <div class="flex justify-end primary_color items-center px-3"
             :style="{ height: deviceHeight * 0.08 + 'px' }">
-            <span @click="back()" class="text-white cursor-pointer"><i class="pi pi-angle-left text-3xl"></i></span>
             <ThemeSwitch />
         </div>
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black" 

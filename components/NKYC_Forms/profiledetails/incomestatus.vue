@@ -63,6 +63,9 @@ const selectMaritalStatus = (value) => {
     emit('updateDiv', 'submission', '2'); 
    
 };
+const back = () => {
+    emit('updateDiv', 'occupation');
+};
 
 
 

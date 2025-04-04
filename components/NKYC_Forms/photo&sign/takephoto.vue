@@ -61,6 +61,9 @@ onMounted(() => {
     });
 });
 
+const back = () => {
+    emit('updateDiv', 'photosign1');
+};
 const handleButtonClick = () => {
   
  isAnimating.value = true;
