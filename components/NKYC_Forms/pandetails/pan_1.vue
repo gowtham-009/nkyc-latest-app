@@ -261,6 +261,7 @@ const back = () => {
 const fileInput = ref(null);
 const selectedFile = ref(null);
 const imageUrl = ref(null);
+
 const openFilePicker = () => {
     if (fileInput.value) {
         fileInput.value.click();

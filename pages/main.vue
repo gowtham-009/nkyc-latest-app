@@ -54,7 +54,33 @@
   <div v-if="currentForm === 'bank4'">
     <BANK4  @updateDiv="handleUpdateDiv" />
   </div>
-  
+  <div v-if="currentForm === 'photosign1'">
+    <PHOTOSIGN1  @updateDiv="handleUpdateDiv" />
+  </div>
+  <div v-if="currentForm === 'takephoto'">
+    <TAKEPHOTO  @updateDiv="handleUpdateDiv"  />
+  </div>
+
+  <div v-if="currentForm === 'photoproceed'">
+    <PHOTOPROCEED :data="data"  @updateDiv="handleUpdateDiv" />
+   
+  </div>
+
+  <div v-if="currentForm === 'signature'">
+    <SIGNATURE   @updateDiv="handleUpdateDiv" />
+  </div>
+
+  <div v-if="currentForm === 'signupload'">
+    <SIGNUPLOAD :data="data" @updateDiv="handleUpdateDiv" />
+  </div>
+
+  <div v-if="currentForm === 'signdraw'">
+    <SIGNDRAWING :data="data" @updateDiv="handleUpdateDiv" />
+  </div>
+ 
+  <div v-if="currentForm === 'thankyou'">
+    <THANKINGYOU @updateDiv="handleUpdateDiv" />
+  </div>
 </template>
 
 <script setup>
@@ -75,15 +101,25 @@ import BANK1 from '~/components/NKYC_Forms/bankdetails/bank1.vue'
 import BANKQR2 from '~/components/NKYC_Forms/bankdetails/bankqr2.vue'
 import BANK3 from '~/components/NKYC_Forms/bankdetails/bank3.vue'
 import BANK4 from '~/components/NKYC_Forms/bankdetails/bank4.vue'
+import PHOTOSIGN1 from '~/components/NKYC_Forms/photo&sign/photosign.vue'
+import TAKEPHOTO from '~/components/NKYC_Forms/photo&sign/takephoto.vue'
+import PHOTOPROCEED from '~/components/NKYC_Forms/photo&sign/pictureproceed.vue'
+import SIGNATURE from '~/components/NKYC_Forms/photo&sign/signature.vue'
+import SIGNUPLOAD from '~/components/NKYC_Forms/photo&sign/signuploaded.vue'
+import SIGNDRAWING from '~/components/NKYC_Forms/photo&sign/signdraw.vue'
+import THANKINGYOU from '~/components/thankyou.vue'
 
 const currentDiv = ref('');
 const currentForm = ref('div1'); 
 const data = ref({});
 
-const handleUpdateDiv = (value,  newData = {}) => {
+const handleUpdateDiv = (value,  newData) => {
 currentDiv.value = value;
 currentForm.value=currentDiv.value
 data.value = newData;
+
+
+
 };
 
 </script>

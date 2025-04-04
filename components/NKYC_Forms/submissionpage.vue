@@ -134,6 +134,12 @@ const handleButtonClick = () => {
        else if(props.data==2){
         emit('updateDiv', 'bank1');
        }
+       else if(props.data==3){
+        emit('updateDiv', 'photosign1');
+       }
+       else if(props.data==4){
+        emit('updateDiv', 'thankyou');
+       }
         
     }, 800);
 };

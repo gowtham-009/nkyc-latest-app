@@ -31,7 +31,7 @@ const stopDrawing = () => {
 const getMousePos = (event) => {
   const rect = canvasRef.value.getBoundingClientRect();
   let x, y;
-  
+
   if (event.touches) {
     x = event.touches[0].clientX - rect.left;
     y = event.touches[0].clientY - rect.top;
@@ -48,9 +48,9 @@ onMounted(() => {
   const canvas = canvasRef.value;
   ctx = canvas.getContext('2d');
 
-  // Set Canvas size to full window
+  // Set Canvas size (Full width, 30% height)
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.height = window.innerHeight * 0.3;
 
   ctx.lineCap = 'round';
   ctx.strokeStyle = 'black'; // Default black color
@@ -92,8 +92,9 @@ onUnmounted(() => {
 canvas {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 30vh; /* 30% of viewport height */
   touch-action: none;
   background-color: white;
+  border: 2px solid black; /* 🔲 Added border */
 }
 </style>
