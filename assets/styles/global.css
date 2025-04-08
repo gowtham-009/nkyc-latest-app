@@ -2,10 +2,11 @@
 
 *{
     font-family: 'Inter', sans-serif;
+   
 }
 
 .primary_color{
-    background-color: oklch(0.398 0.195 277.366);
+    background-color: #0554c8
 }
 
 /* nkyc list page */
