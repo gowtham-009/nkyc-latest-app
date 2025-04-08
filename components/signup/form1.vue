@@ -1,29 +1,26 @@
 <template>
-  <div class="primary_color">
+  <div class="primary_color overflow-hidden h-screen">
     <!-- Box 1 -->
     <div
-      class="w-full p-2 primary_color transition-all duration-1000"
+      class="w-full p-2 primary_color transition-all duration-500"
       :style="{ height: box1Height + 'px' }"
     >
       <div class="w-full px-2 py-2 flex justify-end items-center">
-        <!-- Optional header content -->
+        <!-- Optional header stuff -->
       </div>
       <div class="w-full flex justify-center mt-10">
-        <span class="text-white" style="font-size: 3rem;">NKYC</span>
+        <span class="text-white text-5xl">NKYC</span>
       </div>
     </div>
 
     <!-- Box 2 -->
     <div
-      v-if="showBox2"
-      class="w-full p-2 flex justify-between flex-col bg-white rounded-t-3xl dark:bg-black transition-opacity duration-1000"
-      :style="{ height: deviceHeight * 0.7 + 'px' }"
+      v-show="showBox2"
+      class="w-full p-2 bg-white dark:bg-black rounded-t-3xl transition-all duration-500"
+      :style="{ height: box2Height + 'px' }"
     >
-      <div class="w-full mt-3 px-3 flex flex-col justify-between bg-white">
-        <!-- Add your form elements or other content here -->
-      </div>
-      <div class="w-full">
-        <!-- Add buttons or other UI here -->
+      <div class="w-full mt-3 px-3 flex flex-col justify-between">
+        <!-- Your form / content -->
       </div>
     </div>
   </div>
@@ -32,42 +29,41 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-const emit = defineEmits(['updateDiv']);
-const mobileNumber = ref('');
-const checkboxValue = ref('');
-const isAnimating = ref(false);
-const buttonText = ref('Continue');
-
-const deviceHeight = ref(0);
 const box1Height = ref(0);
+const box2Height = ref(0);
 const showBox2 = ref(false);
 
 onMounted(() => {
-  deviceHeight.value = window.innerHeight;
-  box1Height.value = deviceHeight.value;
+  const fullHeight = window.innerHeight;
 
-  // Listen for window resize to update values
-  window.addEventListener('resize', () => {
-    deviceHeight.value = window.innerHeight;
-    box1Height.value = showBox2.value ? deviceHeight.value * 0.3 : deviceHeight.value;
-  });
+  // Initial state: full height to box 1, box 2 hidden
+  box1Height.value = fullHeight;
+  box2Height.value = 0;
+  showBox2.value = false;
 
-  // Trigger transition after 2 seconds
+  // After 2 seconds: show box 2 and animate heights
   setTimeout(() => {
-    box1Height.value = deviceHeight.value * 0.3;
     showBox2.value = true;
+    box1Height.value = fullHeight * 0.3;
+    box2Height.value = fullHeight * 0.7;
   }, 2000);
-});
 
-const handleButtonClick = () => {
-  isAnimating.value = true;
-  setTimeout(() => {
-    isAnimating.value = false;
-    emit('updateDiv', 'div2', mobileNumber.value);
-  }, 800);
-};
+  // Optional: handle resize
+  window.addEventListener('resize', () => {
+    const updatedHeight = window.innerHeight;
+    if (!showBox2.value) {
+      box1Height.value = updatedHeight;
+      box2Height.value = 0;
+    } else {
+      box1Height.value = updatedHeight * 0.3;
+      box2Height.value = updatedHeight * 0.7;
+    }
+  });
+});
 </script>
 
 <style scoped>
-/* Optional additional styling */
+.primary_color {
+  background-color: #1e3a8a;
+}
 </style>
