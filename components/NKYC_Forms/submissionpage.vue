@@ -9,8 +9,8 @@
                     <!-- something -->
                 </div>
             </div>
-            <div class="w-full p-2 flex flex-col justify-between" :style="{ height: deviceHeight * 0.95 + 'px' }">
-                <div class="w-full p-1">
+            <div class="w-full p-2  flex flex-col justify-between" :style="{ height: deviceHeight * 0.95 + 'px' }">
+                <div class="w-full p-1 px-2">
                     <div class="w-full" v-if="completedbox">
                         <div class="w-full px-4 mt-2">
                             <div v-for="(step, index) in filteredSteps" :key="index" class="w-full flex items-center gap-5 mt-2">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full" v-if="pendingbox">
+                    <div class="w-full px-2" v-if="pendingbox">
                        
                         <div class="w-full mt-2" >
         <p class="text-2xl text-left text-blue-600 font-medium">
