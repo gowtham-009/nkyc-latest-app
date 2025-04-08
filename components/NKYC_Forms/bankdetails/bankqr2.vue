@@ -11,10 +11,10 @@
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-4 px-2">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                     Link your bank account
                 </p>
-                <p class="text-xl mt-3 text-gray-500 font-medium leading-6">
+                <p class="text-md mt-3 text-gray-500 font-medium leading-6">
                     Scan with a UPI app to proceed
                 </p>
             </div>

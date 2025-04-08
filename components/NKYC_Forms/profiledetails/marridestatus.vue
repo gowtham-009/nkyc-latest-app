@@ -10,10 +10,10 @@
             
             <!-- Marital Status -->
             <div class="w-full mt-4 px-2" v-if="activebox === 'marriedbox'">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                     Your marital status
                 </p>
-                <p class="text-lg mt-3 text-gray-500 font-normal leading-6">
+                <p class="text-md mt-3 text-gray-500 font-normal leading-6">
                     These details are required by SEBI to open your Demat account.
                 </p>
                 
@@ -21,7 +21,7 @@
                     <button v-for="option in options" :key="option.value"
                         @click="selectMaritalStatus(option.value)"
                         :class="[
-                            'px-6 py-4 rounded-lg border-2 text-xl font-normal w-full transition-all',
+                            'px-6 py-2 rounded-lg border-2 text-lg font-normal w-full transition-all',
                             selected === option.value
                                 ? 'bg-blue-600 border-blue-600 text-white'
                                 : 'bg-gray-200 border-gray-300 text-black'

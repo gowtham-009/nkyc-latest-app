@@ -8,19 +8,19 @@
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black" 
             :style="{ height: deviceHeight * 0.92 + 'px' }">
           <div class="w-full p-1 mt-8" >
-            <p class="font-medium text-slate-800 text-4xl dark:text-gray-400">
+            <p class="font-medium text-slate-800 text-2xl dark:text-gray-400">
                 OTP sent
             </p>
-            <p class="text-lg leading-6 mt-3 font-normal text-gray-500">
+            <p class="text-md leading-6 mt-3 font-normal text-gray-500">
                 We have sent an OTP to your email  {{ emailid }}
             </p>
             <div class="w-full mt-3">
                 <emailOTP v-model="e_otp"/>
 
                 <div class="w-full mt-1 flex justify-between">
-                    <h2 class="font-medium text-lg dark:text-gray-500">00:{{ timeLeft.toString().padStart(2, '0') }}s</h2>
+                    <h2 class="font-medium text-md dark:text-gray-500">00:{{ timeLeft.toString().padStart(2, '0') }}s</h2>
 
-                    <p class="text-xl text-gray-500 font-medium">Resend OTP</p>
+                    <p class="text-md text-gray-500 font-medium">Resend OTP</p>
                 </div>
             </div>
           </div>

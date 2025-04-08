@@ -9,10 +9,10 @@
             :style="{ height: deviceHeight * 0.92 + 'px' }">
 
             <div class="w-full px-2 mt-4">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                    Draw your signature
                 </p>
-                <p class="text-gray-500 leading-6 font-normal text-xl mt-3">
+                <p class="text-gray-500 leading-6 font-normal text-md mt-3">
                     Use the signature box to sign
                 </p>
                 <canvas ref="canvasRef" class="mt-3 border-2 border-dashed rounded-lg"></canvas>

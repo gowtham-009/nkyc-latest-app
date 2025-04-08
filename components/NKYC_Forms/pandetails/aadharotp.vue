@@ -13,7 +13,7 @@
                     Ventura Securities Onboarding 
                 </p>
 
-                <p class="mt-3 text-justify font-normal text-gray-500 text-xl">
+                <p class="mt-3 text-justify font-normal text-gray-500 text-md">
                 UIDAI has sent a temporary OTP to your mobile ending in ******637(valid for 10 mins)
                 </p>
 
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="w-full mt-3">
-                    <p class="text-black text-xl font-normal dark:text-gray-400">
+                    <p class="text-black text-md font-normal dark:text-gray-400">
                       Wait few minutes for the OTP, <span class="font-medium">do not refresh or close!</span>
                     </p>
                 </div>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="w-full p-1 mt-3">
-             <p class="text-center leading-5 font-normal text-blue-600 text-lg">
+             <p class="text-center leading-5 font-normal text-blue-600 text-md">
                 Return to Ventura Securities Onboarding
              </p>
             </div>

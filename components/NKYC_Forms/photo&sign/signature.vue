@@ -7,23 +7,23 @@
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black" 
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-4 px-2">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                     Add your signature
                 </p>
-                <p class="text-gray-500 leading-6 font-normal text-xl mt-3">
+                <p class="text-gray-500 leading-6 font-normal text-md mt-3">
                     Upload an image or use the signature box to sign
                 </p>
 
                 <div class="w-full mt-3 rounded-lg px-3 py-3 bg-blue-50 dark:bg-slate-900">
-                    <h2 class="text-blue-900 text-2xl font-medium mt-3 dark:text-gray-400">Please remember:</h2>
+                    <h2 class="text-blue-900 text-xl font-medium mt-3 dark:text-gray-400">Please remember:</h2>
 
                     <div class="w-full flex items-center  gap-3 mt-2">
                         <div
-                            class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
+                            class="p-2 px-2 flex justify-center items-center  w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span> <span><i class="pi pi-cog text-xl text-blue-600"></i></span></span>
                         </div>
                         <div class="p-2">
-                            <p class="text-gray-500 leading-6 font-normal text-lg">
+                            <p class="text-gray-500 leading-6 font-normal text-md">
                                Choose the option to upload an image of your signature for accuracy.
                             </p>
                         </div>
@@ -31,22 +31,22 @@
 
                     <div class="w-full flex items-center  gap-3 mt-2">
                         <div
-                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
+                        class="p-2 px-2 flex justify-center items-center w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span><i class="pi pi-clone text-xl text-blue-600"></i></span>
                         </div>
                         <div class="p-2">
-                            <p class="text-gray-500 leading-6 font-normal text-lg">
+                            <p class="text-gray-500 leading-6 font-normal text-md">
                                This signature will be used to match any future offline transaction.
                             </p>
                         </div>
                     </div>
                     <div class="w-full flex items-center gap-3 mt-2">
                         <div
-                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
+                        class="p-2 px-2 flex justify-center items-center  w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                         <span><i class="pi pi-upload text-xl text-blue-600"></i></span>
                         </div>
                         <div class="p-2">
-                            <p class="text-gray-500 leading-6 font-normal text-lg">
+                            <p class="text-gray-500 leading-6 font-normal text-md">
                                signature mismatch will require resubmission as per regulations.
                             </p>
                         </div>
@@ -55,7 +55,7 @@
                    
                 </div>
 
-                <p class="text-gray-500 mt-2 text-lg font-normal text-left">
+                <p class="text-gray-500 mt-2 text-md font-normal text-left">
                     The uploaded photo size should not be more than 5 MB.
                 </p>
 

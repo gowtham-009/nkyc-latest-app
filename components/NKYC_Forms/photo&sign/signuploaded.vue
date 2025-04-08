@@ -14,11 +14,11 @@
 
 
             <div class="w-full p-2 mt-4">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                    Signature added
                 </p>
 
-                <p class="text-lg leading-5 text-gray-500 font-normal mt-2">
+                <p class="text-md leading-5 text-gray-500 font-normal mt-2">
                    Use the same signature as on your PAN
                 </p>
 
@@ -29,8 +29,8 @@
                     </div>
                 </div>
                 <div class="w-full mt-2">
-                    <p class="text-blue-950 font-normal text-2xl text-center dark:text-gray-400">Signature looking different?</p>
-                    <p @click="fileUpload()" class="text-center font-medium text-blue-600 mt-3 text-2xl">Upload Photo</p>
+                    <p class="text-blue-950 font-normal text-md text-center dark:text-gray-400">Signature looking different?</p>
+                    <p @click="fileUpload()" class="text-center font-medium text-blue-600 mt-3 text-lg py-2 border-2 rounded-lg">Upload Photo</p>
                 </div>
             </div>
             <div class="w-full" >

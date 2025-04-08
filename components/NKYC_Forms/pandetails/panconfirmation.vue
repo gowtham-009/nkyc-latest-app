@@ -8,11 +8,11 @@
         <div class="flex justify-between flex-col bg-white rounded-t-3xl dark:bg-black"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-4 px-5 p-1">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                    Cofirm your details
                 </p>
 
-                <p class="text-xl mt-2 leading-6 text-gray-500 font-normal">
+                <p class="text-md mt-2 leading-6 text-gray-500 font-normal">
                     Verify the details fetched from your Aadhaar card.
                 </p>
                
@@ -20,19 +20,19 @@
                 <div class="w-full px-2 py-2 bg-gray-100 rounded-md mt-3 dark:bg-gray-900">
                     <div class="w-full flex gap-3" >
                         <div class="p-1 w-20" >
-                            <p class="font-normal text-lg text-gray-500">Name</p>
+                            <p class="font-normal text-md text-gray-500">Name</p>
                         </div>
                         <div class="p-1 " >
-                            <p class="font-medium text-xl text-blue-900">G*****m</p>
+                            <p class="font-medium text-lg text-blue-900">G*****m</p>
                         </div>
                     </div>
 
                     <div class="w-full flex gap-3" >
                         <div class="p-1 w-20" >
-                            <p class="font-normal text-lg text-gray-500">Father's<br>Name</p>
+                            <p class="font-normal text-md text-gray-500">Father's<br>Name</p>
                         </div>
                         <div class="p-1 flex justify-evenly gap-10" >
-                            <p class="font-medium text-xl text-blue-900">Ra*****n</p>
+                            <p class="font-medium text-lg text-blue-900">Ra*****n</p>
                             <p class="text-right text-lg text-blue-500">Edit <i class="pi pi-angle-right"></i></p>
                             
                         </div>
@@ -41,28 +41,28 @@
 
                     <div class="w-full flex gap-3" >
                         <div class="p-1 w-20" >
-                            <p class="font-normal text-lg text-gray-500">DOB</p>
+                            <p class="font-normal text-md text-gray-500">DOB</p>
                         </div>
                         <div class="p-1" >
-                            <p class="font-medium text-xl text-blue-900">09*****</p>
+                            <p class="font-medium text-lg text-blue-900">09*****</p>
                         </div>
                     </div>
 
                     <div class="w-full flex gap-3" >
                         <div class="p-1 w-20" >
-                            <p class="font-normal text-lg text-gray-500">Gender</p>
+                            <p class="font-normal text-md text-gray-500">Gender</p>
                         </div>
                         <div class="p-1" >
-                            <p class="font-medium text-xl text-blue-900">M*******</p>
+                            <p class="font-medium text-lg text-blue-900">M*******</p>
                         </div>
                     </div>
 
                     <div class="w-full flex gap-3" >
                         <div class="p-1 w-20" >
-                            <p class="font-normal text-lg text-gray-500">Address</p>
+                            <p class="font-normal text-md text-gray-500">Address</p>
                         </div>
                         <div class="p-1" >
-                            <p class="font-medium text-xl text-blue-900">No.64, G*******,<br>N*****, T******</p>
+                            <p class="font-medium text-lg text-blue-900">No.64, G*******,<br>N*****, T******</p>
                         </div>
                     </div>
                 </div>
@@ -72,11 +72,11 @@
 
             <div class="w-full p-1 bg-gray-100 rounded-t-3xl dark:bg-gray-900">
                 <div class="w-full py-3 flex gap-3 justify-between items-center p-1 mb-1" >
-                    <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-600  rounded-full  flex-shrink-0">
-                        <span><i class="pi pi-id-card text-2xl text-gray-300"></i></span>
+                    <div class=" flex justify-center items-center  w-10 h-10 bg-blue-600  rounded-full  flex-shrink-0">
+                        <span><i class="pi pi-id-card text-xl text-gray-300"></i></span>
                     </div>
                     <div class="w-full p-1" >
-                        <p class="text-xl text-blue-900 font-medium">
+                        <p class="text-lg text-blue-900 font-medium">
                             PAN linked with your Aadhaar Card
                         </p>
                     </div>

@@ -13,7 +13,7 @@
                     Ventura Securities Onboarding
                 </p>
 
-                <p class="mt-1 text-justify font-normal  text-gray-500 text-xl">
+                <p class="mt-1 text-justify font-normal  text-gray-500 text-md">
                     You are about to link your DigiLocker account with Ventura Securities Onboarding application of
                     Ventura Securities Ltd.. You will be signed up for DigiLocker account if it does not exist.
                 </p>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="w-full mt-2">
-                    <p class="text-gray-600 font-normal text-xl">
+                    <p class="text-gray-600 font-normal text-md">
                         Please enter the following text in the box below:
                     </p>
                 </div>
@@ -49,7 +49,7 @@
             </div>
 
             <div class="w-full p-1">
-             <p class="text-center font-normal leading-5 text-blue-600 text-lg">
+             <p class="text-center font-normal leading-5 text-blue-600 text-md">
                 Return to Ventura Securities Onboarding
              </p>
             </div>

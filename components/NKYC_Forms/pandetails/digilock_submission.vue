@@ -25,7 +25,7 @@
 
                     <template #content>
                         <div class="w-full">
-                            <p class="text-black text-xl leading-7 font-normal dark:text-gray-400">
+                            <p class="text-black text-lg leading-7 font-normal dark:text-gray-400">
                                 Please provide your consent to share the following with <span class="font-medium">Ventura
                                     Securities Onboarding:</span>
                             </p>
@@ -33,7 +33,7 @@
 
                         <Accordion value="0">
                             <AccordionPanel value="0">
-                                <AccordionHeader class="text-lg font-medium">Issued Documents(3)</AccordionHeader>
+                                <AccordionHeader class="text-md font-medium">Issued Documents(3)</AccordionHeader>
                                 <AccordionContent>
                                     <div class="flex py-3 items-center justify-between gap-2">
                                         <label for="ingredient4"><i class="pi pi-id-card text-xl"></i> Aadhaar Card
@@ -102,11 +102,11 @@
 
 
     <Drawer v-model:visible="visibleBottom" position="bottom" style="height: auto">
-        <p class="text-black text-lg font-normal leading-6 dark:text-gray-400">
+        <p class="text-black text-md font-normal leading-6 dark:text-gray-400">
             Consent validity is subject to applicable laws.
         </p>
 
-        <p class="text-black font-normal text-lg leading-6 mt-2 dark:text-gray-400">
+        <p class="text-black font-normal text-md leading-6 mt-2 dark:text-gray-400">
             By clicking 'Allow', you are giving consent to share with <span class="font-medium">Ventura Securities
                 Onboarding</span>.
         </p>

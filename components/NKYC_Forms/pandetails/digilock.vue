@@ -13,7 +13,7 @@
                     You are already registered with DigiLocker. 
                 </p>
 
-                <p class="mt-3 text-justify font-normal  text-gray-500 text-xl">
+                <p class="mt-3 text-justify font-normal  text-gray-500 text-md">
                 Please enter your 6 digit DigiLocker Security PIN
                 </p>
 
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="w-full mt-3">
-                    <p class="text-blue-600 text-xl font-normal dark:text-gray-400">
+                    <p class="text-blue-600 text-md font-normal dark:text-gray-400">
                       Forget security PIN?
                     </p>
                 </div>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="w-full p-1 mt-3">
-             <p class="text-center leading-5 font-normal text-blue-600 text-lg">
+             <p class="text-center leading-5 font-normal text-blue-600 text-md">
                 Return to Ventura Securities Onboarding
              </p>
             </div>

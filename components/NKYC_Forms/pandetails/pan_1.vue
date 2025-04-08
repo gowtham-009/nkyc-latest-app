@@ -8,57 +8,57 @@
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black" v-if="panbox"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-4 px-2">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                     Upload Pan card
                 </p>
-                <p class="text-gray-500 leading-6 font-normal text-xl mt-3">
+                <p class="text-gray-500 leading-6 font-normal text-md mt-3">
                     Click a photo of your PAN card or upload from files
                 </p>
 
                 <div class="w-full mt-3 rounded-lg px-3 py-3 bg-blue-50 dark:bg-slate-900">
                     <h2 class="text-blue-900 text-2xl font-medium mt-3 dark:text-gray-400">Please remember:</h2>
 
-                    <div class="w-full flex  gap-3 mt-2">
+                    <div class="w-full flex items-center gap-3 mt-2">
                         <div
-                            class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
-                            <span><i class="text-3xl text-blue-900 pi pi-id-card"></i></span>
+                            class="p-2 px-2 flex justify-center items-center static w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
+                            <span><i class="text-xl text-blue-900 pi pi-id-card"></i></span>
                         </div>
                         <div class="p-2">
-                            <p class="text-gray-500 leading-6 font-normal text-lg">
+                            <p class="text-gray-500 leading-6 font-normal text-md">
                                 Upload only the front-side of your PAN card.
                             </p>
                         </div>
                     </div>
 
-                    <div class="w-full flex  gap-3 mt-2">
+                    <div class="w-full flex items-center gap-3 mt-2">
                         <div
-                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
-                            <span><i class="text-3xl text-blue-900 pi pi-image"></i></span>
+                        class="p-2 px-2 flex justify-center items-center static w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
+                            <span><i class="text-xl text-blue-900 pi pi-image"></i></span>
                         </div>
                         <div class="p-2">
-                            <p class="text-gray-500 leading-6 font-normal text-lg">
+                            <p class="text-gray-500 leading-6 font-normal text-md">
                                 Photo size must not exceed 5MB each.
                             </p>
                         </div>
                     </div>
-                    <div class="w-full flex gap-3 mt-2">
+                    <div class="w-full flex items-center gap-3 mt-2">
                         <div
-                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
-                            <span><i class="text-3xl text-blue-900 pi pi-star"></i></span>
+                        class="p-2 px-2 flex justify-center items-center static w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
+                            <span><i class="text-xl text-blue-900 pi pi-star"></i></span>
                         </div>
                         <div class="p-2">
-                            <p class="text-gray-500 leading-6 font-normal text-lg">
+                            <p class="text-gray-500 leading-6 font-normal text-md">
                                 Photo must be well-lit and glare-free.
                             </p>
                         </div>
                     </div>
-                    <div class="w-full flex gap-3 mt-2">
+                    <div class="w-full flex items-center gap-3 mt-2">
                         <div
-                        class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
-                            <span><i class="text-3xl text-blue-900 pi pi-image"></i></span>
+                        class="p-2 px-2 flex justify-center items-center static w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
+                            <span><i class="text-xl text-blue-900 pi pi-image"></i></span>
                         </div>
                         <div class="p-2">
-                            <p class="text-gray-500 leading-6 font-normal text-lg">
+                            <p class="text-gray-500 leading-6 font-normal text-md">
                                 Photo must be clear.
                             </p>
                         </div>
@@ -83,11 +83,11 @@
 
 
             <div class="w-full p-2 mt-4">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                     PAN card captured
                 </p>
 
-                <p class="text-lg leading-5 text-gray-500 font-normal mt-2">
+                <p class="text-md leading-5 text-gray-500 font-normal mt-2">
                     Proceed only if the contents of the photo are clearly visible.
                 </p>
 
@@ -98,8 +98,8 @@
                     </div>
                 </div>
                 <div class="w-full mt-2">
-                    <p class="text-blue-950 font-normal text-2xl text-center dark:text-gray-400">Poor photo quality?</p>
-                    <p class="text-center font-medium text-blue-600 mt-3 text-2xl" @click="openFilePicker">Upload from gallery</p>
+                    <p class="text-blue-950 font-normal text-md text-center dark:text-gray-400">Poor photo quality?</p>
+                    <p class="text-center font-medium text-blue-600 mt-3 text-xl border-2 py-2 rounded-lg" @click="openFilePicker">Upload from gallery</p>
                 </div>
             </div>
             <div class="w-full" >

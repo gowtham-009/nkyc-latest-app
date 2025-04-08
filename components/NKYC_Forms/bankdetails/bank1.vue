@@ -7,11 +7,11 @@
         <div class="flex justify-between px-3 p-1 flex-col bg-white rounded-t-3xl dark:bg-black"
             :style="{ height: deviceHeight * 0.92 + 'px' }">
             <div class="w-full mt-4 px-2">
-                <p class="text-4xl text-blue-900 font-medium dark:text-gray-400">
+                <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                     Link your bank account
                 </p>
 
-                <p class="text-xl mt-3 text-gray-500 font-normal leading-6">
+                <p class="text-md mt-3 text-gray-500 font-normal leading-6">
                     Select UPI app or scan the QR code to proceed
                 </p>
 
@@ -21,7 +21,7 @@
                         <div  @click="bank3"
                             class="p-2 px-2 flex justify-center flex-col items-center  w-20 h-20 rounded-full  flex-shrink-0">
                             <img src="https://img.icons8.com/?size=96&id=OYtBxIlJwMGA&format=png" alt="">
-                            <p class="text-gray-500 font-medium text-xl">PhoneP</p>
+                            <p class="text-gray-500 font-medium text-lg">PhoneP</p>
                         </div>
 
                     </div>
@@ -33,13 +33,13 @@
                 </Divider>
 
                 <div class="w-full flex  gap-2 mt-2 bg-gray-100 rounded-lg py-2 px-2 dark:bg-gray-900" @click="Bankqr2">
-                    <div 
+                    <div
                         class="flex justify-center items-center  w-12 h-12 rounded-full  flex-shrink-0">
                         <span><i class="pi pi-qrcode text-2xl dark:text-gray-400"></i></span>
                     </div>
 
-                    <div class="w-full  " >
-                        <p class="text-xl mt-3 text-gray-600 font-medium leading-6">
+                    <div class="w-full  "  >
+                        <p class="text-lg mt-3 text-gray-600 font-medium leading-6">
                             Tap to generate QR code
                         </p>
                     </div>

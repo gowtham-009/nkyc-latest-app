@@ -13,7 +13,7 @@
                 :style="{ height: deviceHeight * 0.95 + 'px' }">
                 <div class="w-full p-1" >
                     <div class="w-full">
-                        <p class="text-4xl text-center text-blue-600 font-medium">
+                        <p class="text-3xl text-center text-blue-600 font-medium">
                             Here's what's next
                         </p>
                     </div>
@@ -21,8 +21,8 @@
 
                     <div class="w-full px-4 mt-2">
                         <div class="w-full flex gap-5">
-                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
-                                <span><i class="pi pi-folder-open text-blue-900 text-3xl md:text-4xl"></i></span>
+                            <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
+                                <span><i class="pi pi-folder-open text-blue-900 text-xl "></i></span>
                             </div>
                             <div class=" p-1">
                                 <p class="text-xl font-medium text-blue-950 dark:text-gray-400">Complete e-KYC</p>
@@ -31,8 +31,8 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
-                                <span><i class="pi pi-user text-blue-900 text-3xl" ></i></span>
+                            <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
+                                <span><i class="pi pi-user text-blue-900 text-xl" ></i></span>
                             </div>
                             <div class="p-1">
                                 <p class="text-xl font-medium text-blue-950 dark:text-gray-400">Set up your profile</p>
@@ -41,8 +41,8 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
-                                <span><i class="pi pi-credit-card text-blue-900 text-3xl" ></i></span>
+                            <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
+                                <span><i class="pi pi-credit-card text-blue-900 text-xl" ></i></span>
                             </div>
                             <div class="p-1">
                                 <p class="text-xl font-medium text-blue-950 dark:text-gray-400">Link your bank a/c</p>
@@ -52,8 +52,8 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
-                                <span><i class="pi pi-verified text-blue-900 text-3xl" ></i></span>
+                            <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
+                                <span><i class="pi pi-verified text-blue-900 text-xl" ></i></span>
                             </div>
                             <div class="p-1">
                                 <p class="text-xl font-medium text-blue-950 dark:text-gray-400">Confirm it's you</p>
@@ -63,8 +63,8 @@
                         </div>
 
                         <div class="w-full flex gap-5 mt-2">
-                            <div class="p-2 px-2 flex justify-center items-center static w-14 h-14 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
-                                <span><i class="pi pi-pen-to-square text-blue-900 text-3xl"></i></span>
+                            <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
+                                <span><i class="pi pi-pen-to-square text-blue-900 text-xl"></i></span>
                             </div>
                             <div class="p-1">
                                 <p class="text-xl font-medium text-blue-950 dark:text-gray-400">eSign and Login</p>

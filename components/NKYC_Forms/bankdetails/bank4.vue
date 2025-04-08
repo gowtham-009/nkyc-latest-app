@@ -12,10 +12,10 @@
                     <img src="https://cdn-icons-png.flaticon.com/128/2830/2830289.png" alt="">
                 </div>
 
-                <h1 class="text-center mt-3 text-3xl font-medium text-blue-950 dark:text-gray-400">
+                <h1 class="text-center mt-3 text-2xl font-medium text-blue-950 dark:text-gray-400">
                     Bank account added
                 </h1>
-                <p class="text-xl text-center mt-1 font-normal text-gray-500">
+                <p class="text-md text-center mt-1 font-normal text-gray-500">
                     Your bank details have been verified.
                 </p>
 
@@ -27,33 +27,33 @@
                         </div>
 
                         <div>
-                            <p class="text-medium text-xl text-gray-500">Bank Name</p>
+                            <p class="text-medium text-lg text-gray-500">Bank Name</p>
                         </div>
 
                     </div>
 
                     <div class="w-full flex mt-2 p-1" >
                         <div class="w-full p-1" >
-                            <p class="text-xl text-left text-gray-500 font-normal">Acc.No.</p>
+                            <p class="text-md text-left text-gray-500 font-normal">Acc.No.</p>
                         </div>
                         <div class="w-full p-1" >
-                            <p class="text-xl text-right text-blue-900 font-medium dark:text-gray-400">XXXXXXXXX134</p>
-                        </div>
-                    </div>
-                    <div class="w-full flex p-1" >
-                        <div class="w-full p-1" >
-                            <p class="text-xl text-left text-gray-500 font-normal">IFSC Code</p>
-                        </div>
-                        <div class="w-full p-1" >
-                            <p class="text-xl text-right text-blue-900 font-medium dark:text-gray-400">IOBXXXXXXX134</p>
+                            <p class="text-lg text-right text-blue-900 font-medium dark:text-gray-400">XXXXXXXXX134</p>
                         </div>
                     </div>
                     <div class="w-full flex p-1" >
                         <div class="w-full p-1" >
-                            <p class="text-xl text-left text-gray-500 font-normal">Branch</p>
+                            <p class="text-md text-left text-gray-500 font-normal">IFSC Code</p>
                         </div>
                         <div class="w-full p-1" >
-                            <p class="text-xl text-right text-blue-900 font-medium dark:text-gray-400">DIGITAL BANKING SERVICE</p>
+                            <p class="text-lg text-right text-blue-900 font-medium dark:text-gray-400">IOBXXXXXXX134</p>
+                        </div>
+                    </div>
+                    <div class="w-full flex p-1" >
+                        <div class="w-full p-1" >
+                            <p class="text-md text-left text-gray-500 font-normal">Branch</p>
+                        </div>
+                        <div class="w-full p-1" >
+                            <p class="text-lg text-right text-blue-900 font-medium dark:text-gray-400">DIGITAL BANKING SERVICE</p>
                         </div>
                     </div>
                 </div>
