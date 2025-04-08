@@ -2,7 +2,7 @@
   <div class="primary_color overflow-hidden h-screen">
     <!-- Box 1 -->
     <div
-      class="w-full p-2 primary_color transition-all duration-200"
+      class="w-full p-2 primary_color transition-all duration-100"
       :style="{ height: box1Height + 'px' }"
     >
       <div class="w-full px-2 py-2 flex justify-end items-center">
@@ -16,7 +16,7 @@
     <!-- Box 2 -->
     <div
       v-show="showBox2"
-      class="w-full p-2 bg-white dark:bg-black rounded-t-3xl transition-all duration-200"
+      class="w-full p-2 bg-white dark:bg-black rounded-t-3xl transition-all duration-100"
       :style="{ height: box2Height + 'px' }"
     >
       <div class="w-full mt-3 px-3 flex flex-col justify-between">
