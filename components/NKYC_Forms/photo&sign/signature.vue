@@ -10,14 +10,14 @@
                 <p class="text-2xl text-blue-900 font-medium dark:text-gray-400">
                     Add your signature
                 </p>
-                <p class="text-gray-500 leading-6 font-normal text-md mt-3">
+                <p class="text-gray-500 leading-6 font-normal text-md mt-2">
                     Upload an image or use the signature box to sign
                 </p>
 
-                <div class="w-full mt-3 rounded-lg px-3 py-3 bg-blue-50 dark:bg-slate-900">
-                    <h2 class="text-blue-900 text-xl font-medium mt-3 dark:text-gray-400">Please remember:</h2>
+                <div class="w-full mt-2 rounded-lg px-3 py-3 bg-blue-50 dark:bg-slate-900">
+                    <h2 class="text-blue-900 text-xl font-medium mt-2 dark:text-gray-400">Please remember:</h2>
 
-                    <div class="w-full flex items-center  gap-3 mt-2">
+                    <div class="w-full flex items-center  gap-3 mt-1">
                         <div
                             class="p-2 px-2 flex justify-center items-center  w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span> <span><i class="pi pi-cog text-xl text-blue-600"></i></span></span>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full flex items-center  gap-3 mt-2">
+                    <div class="w-full flex items-center  gap-3 mt-1">
                         <div
                         class="p-2 px-2 flex justify-center items-center w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                             <span><i class="pi pi-clone text-xl text-blue-600"></i></span>
@@ -40,7 +40,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-full flex items-center gap-3 mt-2">
+                    <div class="w-full flex items-center gap-3 mt-1">
                         <div
                         class="p-2 px-2 flex justify-center items-center  w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-md flex-shrink-0">
                         <span><i class="pi pi-upload text-xl text-blue-600"></i></span>
@@ -55,7 +55,7 @@
                    
                 </div>
 
-                <p class="text-gray-500 mt-2 text-md font-normal text-left">
+                <p class="text-gray-500 mt-1 text-md font-normal text-left">
                     The uploaded photo size should not be more than 5 MB.
                 </p>
 
