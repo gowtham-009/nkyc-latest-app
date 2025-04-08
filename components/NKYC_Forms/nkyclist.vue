@@ -20,7 +20,7 @@
 
 
                     <div class="w-full px-4 mt-2">
-                        <div class="w-full flex gap-5">
+                        <div class="w-full flex items-center gap-5">
                             <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-folder-open text-blue-900 text-xl "></i></span>
                             </div>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
 
-                        <div class="w-full flex gap-5 mt-2">
+                        <div class="w-full flex items-center gap-5 mt-2">
                             <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-user text-blue-900 text-xl" ></i></span>
                             </div>
@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        <div class="w-full flex gap-5 mt-2">
+                        <div class="w-full flex items-center gap-5 mt-2">
                             <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-credit-card text-blue-900 text-xl" ></i></span>
                             </div>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="w-full flex gap-5 mt-2">
+                        <div class="w-full flex items-center gap-5 mt-2">
                             <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-verified text-blue-900 text-xl" ></i></span>
                             </div>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
 
-                        <div class="w-full flex gap-5 mt-2">
+                        <div class="w-full flex items-center gap-5 mt-2">
                             <div class="p-2 px-2 flex justify-center items-center static w-12 h-12 bg-blue-200 dark:bg-slate-900  rounded-full  flex-shrink-0">
                                 <span><i class="pi pi-pen-to-square text-blue-900 text-xl"></i></span>
                             </div>
