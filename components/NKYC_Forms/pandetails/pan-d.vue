@@ -19,26 +19,30 @@
                 </div>
 
                 <div class="w-full mt-2">
-                    <DOB v-model="dateval"/>
+                    <DOB v-model="dob"/>
+                  
                 </div>
 
                 <Divider align="center" type="dotted">
                     <b class="text-gray-600">OR</b>
                 </Divider>
 
-                <p class=" text-center cursor-pointer text-xl font-medium text-blue-600" @click="panphoto">Upload your PAN Card</p>
+                <p class=" text-center cursor-pointer text-xl font-medium text-blue-600" @click="panphoto">Upload your
+                    PAN Card</p>
 
                 <div class="w-full mt-2">
-                    <Pancheck v-model="checkboxval"/>
+                    <Pancheck v-model="checkboxval" />
                 </div>
                 <div class="w-full flex gap-3 px-2 py-2 mt-2 bg-gray-100 rounded-lg dark:bg-gray-900">
-                   <p><i class="pi pi-star-fill text-xl text-yellow-400"></i></p>
-                    <p class=" text-gray-500 text-sm leading-5">Your account would be opened as per your PAN card details. Plese use the <span class="font-normal">Offline Account Opening Form</span> if you are looking to open an HUF, Corporate, Partnership, Joint or NRI account.</p>
+                    <p><i class="pi pi-star-fill text-xl text-yellow-400"></i></p>
+                    <p class=" text-gray-500 text-sm leading-5">Your account would be opened as per your PAN card
+                        details. Plese use the <span class="font-normal">Offline Account Opening Form</span> if you are
+                        looking to open an HUF, Corporate, Partnership, Joint or NRI account.</p>
                 </div>
             </div>
 
             <div class="w-full p-1" label="Continue">
-                <Button type="button"  :disabled="!panno || !dateval || !checkboxval"   @click="handleButtonClick"
+                <Button type="button" :disabled="!panno || ! dob || !checkboxval" @click="handleButtonClick"
                     class=" primary_color wave-btn text-white w-full py-4 text-xl border-0  ">
                     {{ buttonText }}
                     <span v-if="isAnimating" class="wave"></span>
@@ -58,12 +62,14 @@ import { ref, onMounted } from 'vue';
 import paninput from '~/components/forminputs/paninput.vue';
 import DOB from '~/components/forminputs/dateinput.vue'
 import Pancheck from '~/components/forminputs/pancheck.vue'
+
 const deviceHeight = ref(0);
 const isAnimating = ref(false);
 const buttonText = ref("Continue");
-const panno=ref('')
-const dateval=ref('')
-const checkboxval=ref('')
+const panno = ref('')
+const dateval = ref('')
+const checkboxval = ref('')
+const dob = ref('')
 
 onMounted(() => {
     deviceHeight.value = window.innerHeight;
@@ -77,15 +83,15 @@ const back = () => {
     emit('updateDiv', 'div1');
 }
 
-const panphoto=()=>{
+const panphoto = () => {
     emit('updateDiv', 'div3');
 }
 
 const handleButtonClick = () => {
- isAnimating.value = true;
+    isAnimating.value = true;
     setTimeout(() => {
-      isAnimating.value = false;
-      emit('updateDiv', 'div4');
-    }, 800); 
+        isAnimating.value = false;
+        emit('updateDiv', 'div4');
+    }, 800);
 };
 </script>

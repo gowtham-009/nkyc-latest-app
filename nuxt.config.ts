@@ -16,7 +16,8 @@ export default defineNuxtConfig({
         '@primevue/nuxt-module'
       ],
  
-    css: ['@/assets/styles/tailwind.css', '@/assets/styles/base.css', '@/assets/styles/global.css'],
+    css: ['@/assets/styles/tailwind.css', '@/assets/styles/base.css', '@/assets/styles/global.css','flatpickr/dist/flatpickr.min.css'],
+ 
     primevue: {
         options: { theme: 'none',
            

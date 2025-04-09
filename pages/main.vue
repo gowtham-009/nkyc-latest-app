@@ -42,6 +42,9 @@
   <div v-if="currentForm === 'income'">
     <INCOME  @updateDiv="handleUpdateDiv" />
   </div>
+  <div v-if="currentForm === 'nominee'">
+    <NOMINEE  @updateDiv="handleUpdateDiv" />
+  </div>
   <div v-if="currentForm === 'bank1'">
     <BANK1  @updateDiv="handleUpdateDiv" />
   </div>
@@ -97,6 +100,7 @@ import SUBMISSIONFORM from '~/components/NKYC_Forms/submissionpage.vue'
 import MARRIEDSTATUS from '~/components/NKYC_Forms/profiledetails/marridestatus.vue'
 import OCCUPATION from '~/components/NKYC_Forms/profiledetails/occupationstatus.vue'
 import INCOME from '~/components/NKYC_Forms/profiledetails/incomestatus.vue'
+import NOMINEE from '~/components/NKYC_Forms/profiledetails/nominee.vue'
 import BANK1 from '~/components/NKYC_Forms/bankdetails/bank1.vue'
 import BANKQR2 from '~/components/NKYC_Forms/bankdetails/bankqr2.vue'
 import BANK3 from '~/components/NKYC_Forms/bankdetails/bank3.vue'

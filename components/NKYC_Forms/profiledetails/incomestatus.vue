@@ -60,14 +60,14 @@ const options = [
 
 const selectMaritalStatus = (value) => {
     selected.value = value;
-    emit('updateDiv', 'submission', '2'); 
+    emit('updateDiv', 'nominee'); 
    
 };
 const back = () => {
     emit('updateDiv', 'occupation');
 };
 
-
+//'2'
 
 onMounted(() => {
     deviceHeight.value = window.innerHeight;

@@ -28,6 +28,7 @@
 
         <div class="w-full mt-4">
           <MobileInput v-model="mobileNumber" />
+          
         </div>
 
         <div class="w-full mt-4">
@@ -58,7 +59,7 @@ import { ref, onMounted } from 'vue';
 import ThemeSwitch from '~/components/darkmode/darkmode.vue';
 import MobileInput from '~/components/forminputs/mobileinput.vue';
 import Checkbox from '~/components/forminputs/remembercheckbox.vue';
-import Button from 'primevue/button';
+
 
 const box1Height = ref(0);
 const box2Height = ref(0);

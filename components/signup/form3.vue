@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="w-full p-2 bg-white rounded-t-3xl dark:bg-black" :style="{ height: deviceHeight * 0.70 + 'px' }">
+    <div class="w-full flex flex-col justify-between p-2 bg-white rounded-t-3xl dark:bg-black" :style="{ height: deviceHeight * 0.70 + 'px' }">
       <div class="w-full mt-3 px-3">
         <div class="w-full">
           <p class="text-2xl font-medium dark:text-gray-400">Add your email</p>
@@ -25,8 +25,9 @@
           <EmailInput v-model="emailid" />
 
         </div>
+      </div>
 
-        <div class="w-full mt-5">
+      <div class="w-full mt-5">
           <Button type="button"
            label="Continue" :disabled="!isValidEmail"
             class=" wave-btn primary_color text-white w-full py-4 text-xl border-0 "
@@ -35,13 +36,8 @@
             <span v-if="isAnimating" class="wave"></span>
           </Button>
 
-          <p class="text-gray-500 text-center mt-1">OR</p>
-
-          <Button type="button" icon="pi pi-google" label="Continue with Google"
-            class="bg-blue-900 text-white w-full py-4 text-xl border-0 mt-1">
-          </Button>
+        
         </div>
-      </div>
     </div>
   </div>
 </template>
